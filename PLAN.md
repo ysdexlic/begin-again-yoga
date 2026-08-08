@@ -59,15 +59,16 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 ## Phase 5 — Deploy
 
 - [x] `.github/workflows/deploy.yml` — copy verbatim from TECH.md §Deployment
-- [ ] Owner: push, then repo Settings → Pages → Source: **GitHub Actions**
-- [ ] Verify live URL: fonts load, images load, nav works (base-path mistakes show up here), 404 page serves
-- **Acceptance:** site live at `https://ysdexlic.github.io/begin-again-yoga/`.
+- [x] Owner: push, then repo Settings → Pages → Source: **GitHub Actions**
+- [x] Verify live URL: fonts load, images load, nav works (base-path mistakes show up here), 404 page serves — verified 2026-08-08 against `https://beginagainyoga.co.uk` (custom domain superseded the github.io URL; all pages, fonts, logo webp, robots/sitemap 200; branded 404 serves; HTTPS enforced with auto-renewing Let's Encrypt cert)
+- **Acceptance:** site live at `https://ysdexlic.github.io/begin-again-yoga/`. ✅ Live at `https://beginagainyoga.co.uk` (see Phase 6 note).
 
 ## Phase 6 — Real content (needs Phase 0 answers)
 
 - [ ] Replace `[LOCATION]`/TODO placeholders from Ardita's answers
 - [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5)
-- [ ] Optional: contact form via Formspree; booking embed; custom domain (TECH.md §Custom domain)
+- [ ] Optional: contact form via Formspree; booking embed
+- [x] Custom domain (TECH.md §Custom domain): `beginagainyoga.co.uk` — Cloudflare DNS (grey-cloud A/CNAME records), Pages cname set via API, HTTPS enforced
 
 ## Out of scope for v1
 
