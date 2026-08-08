@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ysdexlic.github.io/begin-again-yoga/sitemap-index.xml
+Sitemap: https://beginagainyoga.co.uk/sitemap-index.xml
