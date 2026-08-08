@@ -31,11 +31,11 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 2 — Brand assets (SVG)
 
-- [ ] Recreate the primary logo lockup as inline SVG per BRAND §1 (circle mark, sun, hills, path, branch, birds, wordmark)
-- [ ] Icon-only variant (circle mark) and one-color deep-sage variant
-- [ ] The five brand icons (BRAND §4) as a single `Icon.astro` component: `sunrise`, `path`, `sprout`, `heart`, `circle`
-- [ ] Layered-hills section divider SVG (sand/sage, low opacity)
-- [ ] `favicon.svg` (+ 180px apple-touch PNG), `og-image` 1200×630 (sage bg, one-color logo)
+- [x] Recreate the primary logo lockup as inline SVG per BRAND §1 (circle mark, sun, hills, path, branch, birds, wordmark) — interim art; owner will supply a logo PNG later (park it in `src/assets/brand/`)
+- [x] Icon-only variant (circle mark) and one-color deep-sage variant
+- [x] The five brand icons (BRAND §4) as a single `Icon.astro` component: `sunrise`, `path`, `sprout`, `heart`, `circle`
+- [x] Layered-hills section divider SVG (sand/sage, low opacity)
+- [x] `favicon.svg` (+ 180px apple-touch PNG), `og-image` 1200×630 (sage bg, one-color logo)
 - **Acceptance:** logo is legible at 32px and crisp at 480px; icons share stroke weight and optical size on a 24px grid.
 
 ## Phase 3 — Pages

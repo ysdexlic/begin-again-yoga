@@ -1,0 +1,246 @@
+---
+/**
+ * The Begin Again Yoga logo, recreated as SVG from docs/BRAND.md §1 and the
+ * brand board: open circle broken by a leafy branch, terracotta sun over
+ * watercolor hills, a cream winding path, three birds, script wordmark.
+ *
+ * variant: 'full' = mark + wordmark lockup · 'mark' = circle mark only
+ * tone:    'brand' = full palette · 'mono' = one-color line art
+ *          (inherits currentColor — set `color` on a parent)
+ * label:   accessible name; pass '' when a labelled parent link wraps it
+ */
+interface Props {
+  variant?: 'full' | 'mark';
+  tone?: 'brand' | 'mono';
+  label?: string;
+  class?: string;
+}
+
+const {
+  variant = 'full',
+  tone = 'brand',
+  label = 'Begin Again Yoga',
+  class: className,
+} = Astro.props;
+
+/* Sixteen thin rays around the sun (cx 120, cy 100), r 23 → 33 */
+const SUN = { x: 120, y: 100 };
+const rays = Array.from({ length: 16 }, (_, k) => {
+  const a = (k * Math.PI) / 8;
+  const p = (r: number) =>
+    `${(SUN.x + r * Math.cos(a)).toFixed(1)} ${(SUN.y - r * Math.sin(a)).toFixed(1)}`;
+  return `M${p(23)}L${p(33)}`;
+}).join('');
+
+/* Leaves anchored on the stem curve, alternating sides:
+   [x, y, rotation, scale, solid?] */
+const leaves: [number, number, number, number, boolean][] = [
+  [60, 126, -65, 0.85, true],
+  [57.5, 114, 30, 0.9, false],
+  [56, 100, -60, 1.0, true],
+  [56.3, 87, 35, 0.9, false],
+  [58.5, 71, -55, 1.05, true],
+  [63, 55.5, 40, 0.85, false],
+  [69.5, 40.5, -45, 0.95, true],
+  [77, 28, 48, 0.8, false],
+  [83.5, 19.5, -25, 0.7, true],
+];
+---
+
+<span class:list={['logo', `tone-${tone}`, className]}>
+  <svg
+    class="mark"
+    viewBox="0 0 240 240"
+    width="240"
+    height="240"
+    fill="none"
+    role={label ? 'img' : undefined}
+    aria-label={label || undefined}
+    aria-hidden={label ? undefined : 'true'}
+  >
+    {label && <title>{label}</title>}
+
+    <defs>
+      <clipPath id="logo-circle-clip">
+        <circle cx="120" cy="122" r="88"></circle>
+      </clipPath>
+      <path
+        id="logo-leaf"
+        d="M0 0C4.5-3.5 5.5-10 3.5-16.5C-2-12.5-3.2-5 0 0Z"></path>
+    </defs>
+
+    <!-- open circle, broken at the upper-left (gap 115°–145°) -->
+    <path
+      class="ln"
+      d="M82.0 40.4A90 90 0 1 1 46.3 70.4"
+      stroke-width="2.25"></path>
+
+    <!-- scene inside the circle -->
+    <g clip-path="url(#logo-circle-clip)">
+      <g class="sun">
+        <circle class="sun-disc" cx="120" cy="100" r="16.5"></circle>
+        <path class="ray" d={rays} stroke-width="1.5"></path>
+      </g>
+
+      <path
+        class="hill hill-sand"
+        d="M8 210C36 138 88 122 126 168C100 196 40 202 8 210Z"></path>
+      <path
+        class="hill hill-sage"
+        d="M96 210C122 142 176 130 218 178L216 210Z"></path>
+      <path
+        class="hill hill-taupe"
+        d="M6 214C66 176 174 178 234 212L232 218L8 218Z"></path>
+
+      <path
+        class="path-cream"
+        d="M93 209C101 190 106 181 100 170C94 158 106 146 111 137C114.5 130 116 124 117.2 118L122.8 118C121.5 124 120 130 117 136C112 145 102 158 109 170C114 179 118 190 121 209Z"></path>
+    </g>
+
+    <!-- birds, upper right -->
+    <path
+      class="ln birds"
+      d="M146 50q2.6-3.4 5.2 0q2.6-3.4 5.2 0M161 42q2.4-3.1 4.8 0q2.4-3.1 4.8 0M166 58q2-2.6 4 0q2-2.6 4 0"
+      stroke-width="1.4"></path>
+
+    <!-- leafy branch threading the break -->
+    <g class="branch">
+      <path class="ln stem" d="M64 138C50 104 52 56 86 16" stroke-width="1.75"></path>
+      {
+        leaves.map(([x, y, r, s, solid]) => (
+          <use
+            href="#logo-leaf"
+            class={solid ? 'leaf-solid' : 'ln leaf-line'}
+            transform={`translate(${x} ${y}) rotate(${r}) scale(${s})`}
+            stroke-width="1.4"
+          />
+        ))
+      }
+    </g>
+  </svg>
+
+  {
+    variant === 'full' && (
+      <span class="wordmark" aria-hidden="true">
+        <span class="name script">Begin Again</span>
+        <span class="yoga label">— Yoga —</span>
+        <svg class="lotus" viewBox="0 0 28 16" fill="none">
+          <path
+            class="ln"
+            d="M14 2.5C16.3 5.5 16.3 9 14 12C11.7 9 11.7 5.5 14 2.5Z"
+            stroke-width="1.3"
+          />
+          <path
+            class="ln"
+            d="M6.5 6.5C9.5 7.2 12 9.5 13 12.5C9.5 12.4 7 10.3 6.5 6.5Z"
+            stroke-width="1.3"
+          />
+          <path
+            class="ln"
+            d="M21.5 6.5C18.5 7.2 16 9.5 15 12.5C18.5 12.4 21 10.3 21.5 6.5Z"
+            stroke-width="1.3"
+          />
+        </svg>
+      </span>
+    )
+  }
+</span>
+
+<style>
+  .logo {
+    /* Brand tone — every color is a token from global.css */
+    --l-line: var(--sage-deep);
+    --l-sun: var(--terracotta);
+    --l-hill-sand: var(--sand);
+    --l-hill-sage: var(--sage);
+    --l-hill-taupe: var(--taupe);
+    --l-path: var(--cream);
+    --l-yoga: var(--terracotta-ink);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* One-color line art: everything inherits currentColor */
+  .tone-mono {
+    --l-line: currentColor;
+    --l-sun: currentColor;
+    --l-yoga: currentColor;
+  }
+
+  .mark {
+    width: 100%;
+    height: auto;
+  }
+
+  .ln {
+    stroke: var(--l-line);
+  }
+
+  .sun-disc {
+    fill: var(--l-sun);
+  }
+
+  .ray {
+    stroke: var(--l-sun);
+  }
+
+  .leaf-solid {
+    fill: var(--l-line);
+  }
+
+  .hill-sand {
+    fill: var(--l-hill-sand);
+  }
+
+  .hill-sage {
+    fill: var(--l-hill-sage);
+  }
+
+  .hill-taupe {
+    fill: var(--l-hill-taupe);
+    opacity: 0.75;
+  }
+
+  .path-cream {
+    fill: var(--l-path);
+  }
+
+  .tone-mono .sun-disc,
+  .tone-mono .hill,
+  .tone-mono .path-cream {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  .tone-mono .leaf-solid {
+    fill: currentColor;
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375em;
+    margin-top: 0.5em;
+  }
+
+  .name {
+    font-size: 2.6em;
+    color: var(--l-line);
+    line-height: 1;
+  }
+
+  .yoga {
+    color: var(--l-yoga);
+    font-size: 0.8em;
+  }
+
+  .lotus {
+    width: 1.75em;
+    margin-top: 0.125em;
+  }
+</style>
