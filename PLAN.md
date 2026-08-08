@@ -1,0 +1,75 @@
+# Build Plan — Begin Again Yoga
+
+**How to use this file:** work the phases in order. A phase is done when its
+acceptance criteria hold, `npm run build` passes, its checkboxes are ticked, and the
+work is committed as `phase(N): <summary>`. All specs live in `docs/` — this file is
+the sequence, not the spec.
+
+Phases 1–5 are buildable today with placeholder content. Phase 0 answers unblock
+Phase 6 only.
+
+---
+
+## Phase 0 — Owner inputs (no code)
+
+Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
+
+- [x] Add the brand board image (the logo/palette reference) as `docs/brand-board.jpg`
+- [ ] Confirm GitHub repo name (plan assumes `begin-again-yoga` — see TECH.md if different)
+- [ ] Custom domain yes/no (affects `base` config — TECH.md §Deployment)
+- [ ] Answer the "Open questions" list at the bottom of docs/CONTENT.md
+
+## Phase 1 — Scaffold & design system
+
+- [ ] Scaffold Astro 5 minimal template into the repo root (commands in TECH.md §Scaffolding), TypeScript strict, keep existing files
+- [ ] `astro.config.mjs` with `site`/`base` per TECH.md, `@astrojs/sitemap` integration
+- [ ] Install fonts via @fontsource: Allura, Cormorant Garamond, Karla (BRAND §3)
+- [ ] `src/styles/global.css`: modern reset, all design tokens from BRAND §2–3, fluid type scale, visible focus styles, `prefers-reduced-motion` guard
+- [ ] `src/layouts/Base.astro`: head with per-page title/description props, fonts, skip-link, header/footer
+- [ ] `Header` (logo + nav) and `Footer` (icon strip, contact, credit) components; mobile nav without a framework (CSS-only or ≤10 lines of inline script)
+- **Acceptance:** empty pages render with correct fonts and colors; nav is usable at 360px wide and by keyboard.
+
+## Phase 2 — Brand assets (SVG)
+
+- [ ] Recreate the primary logo lockup as inline SVG per BRAND §1 (circle mark, sun, hills, path, branch, birds, wordmark)
+- [ ] Icon-only variant (circle mark) and one-color deep-sage variant
+- [ ] The five brand icons (BRAND §4) as a single `Icon.astro` component: `sunrise`, `path`, `sprout`, `heart`, `circle`
+- [ ] Layered-hills section divider SVG (sand/sage, low opacity)
+- [ ] `favicon.svg` (+ 180px apple-touch PNG), `og-image` 1200×630 (sage bg, one-color logo)
+- **Acceptance:** logo is legible at 32px and crisp at 480px; icons share stroke weight and optical size on a 24px grid.
+
+## Phase 3 — Pages
+
+- [ ] Data files per TECH.md: `site.json`, `classes.json`, `schedule.json`, `pricing.json` — placeholder content exactly as marked in CONTENT.md
+- [ ] Home — hero, icon value strip, intro, class-card preview, sage quote band, practical section (CONTENT §Home)
+- [ ] About — story, philosophy, trainings placeholder, photo placeholders (CONTENT §About)
+- [ ] Classes & Schedule — class cards, weekly schedule table, pricing cards, first-timer FAQ (CONTENT §Classes)
+- [ ] Contact — email CTA, Instagram, location; no form in v1 (CONTENT §Contact)
+- [ ] 404 — on-brand (CONTENT §404)
+- **Acceptance:** every section listed in CONTENT.md exists; no dead links; internal links respect the base path; placeholders clearly marked, none invented.
+
+## Phase 4 — Polish
+
+- [ ] Responsive pass 360→1440px (test iPhone width first — traffic will come from Instagram)
+- [ ] Accessibility: landmarks, alt text, heading order, contrast per BRAND §2 rules only, keyboard walk-through, reduced-motion respected
+- [ ] SEO: unique title + meta description per page, OG/Twitter tags, sitemap, `robots.txt`
+- [ ] Lighthouse ≥ 95 in all four categories against `npm run preview`; record scores in the phase commit message
+- **Acceptance:** the numbers above, verified, not assumed.
+
+## Phase 5 — Deploy
+
+- [ ] `.github/workflows/deploy.yml` — copy verbatim from TECH.md §Deployment
+- [ ] Owner: push, then repo Settings → Pages → Source: **GitHub Actions**
+- [ ] Verify live URL: fonts load, images load, nav works (base-path mistakes show up here), 404 page serves
+- **Acceptance:** site live at `https://ysdexlic.github.io/begin-again-yoga/`.
+
+## Phase 6 — Real content (needs Phase 0 answers)
+
+- [ ] Replace `[NAME]`/`[LOCATION]`/TODO placeholders from the owner's answers
+- [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5)
+- [ ] Optional: contact form via Formspree; booking embed; custom domain (TECH.md §Custom domain)
+
+## Out of scope for v1
+
+Blog, CMS, newsletter, online payments, booking backend, class-pack e-commerce.
+Say no by default; add later if the practice grows into them.
