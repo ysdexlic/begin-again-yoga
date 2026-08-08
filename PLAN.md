@@ -58,7 +58,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 5 — Deploy
 
-- [ ] `.github/workflows/deploy.yml` — copy verbatim from TECH.md §Deployment
+- [x] `.github/workflows/deploy.yml` — copy verbatim from TECH.md §Deployment
 - [ ] Owner: push, then repo Settings → Pages → Source: **GitHub Actions**
 - [ ] Verify live URL: fonts load, images load, nav works (base-path mistakes show up here), 404 page serves
 - **Acceptance:** site live at `https://ysdexlic.github.io/begin-again-yoga/`.
