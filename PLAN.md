@@ -31,7 +31,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 2 — Brand assets (SVG)
 
-- [x] Recreate the primary logo lockup as inline SVG per BRAND §1 (circle mark, sun, hills, path, branch, birds, wordmark) — interim art; owner will supply a logo PNG later (park it in `src/assets/brand/`)
+- [x] Recreate the primary logo lockup as inline SVG per BRAND §1 (circle mark, sun, hills, path, branch, birds, wordmark) — superseded: the owner's real logo PNG is in use (original parked in `src/assets/brand/logo.png`, background-removed version in `logo-transparent.png`); the interim SVG lockup was removed
 - [x] Icon-only variant (circle mark) and one-color deep-sage variant
 - [x] The five brand icons (BRAND §4) as a single `Icon.astro` component: `sunrise`, `path`, `sprout`, `heart`, `circle`
 - [x] Layered-hills section divider SVG (sand/sage, low opacity)

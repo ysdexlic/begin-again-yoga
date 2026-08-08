@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import Logo from '../components/Logo.astro';
+import logo from '../assets/brand/logo-transparent.png';
 import ValueStrip from '../components/ValueStrip.astro';
 import ClassCard from '../components/ClassCard.astro';
 import QuoteBand from '../components/QuoteBand.astro';
@@ -20,7 +21,14 @@ import classes from '../data/classes.json';
 >
   <section class="hero">
     <div class="wrap hero-inner">
-      <div class="hero-logo"><Logo /></div>
+      <Image
+        class="hero-logo"
+        src={logo}
+        alt="Begin Again Yoga"
+        width={288}
+        densities={[1, 2]}
+        loading="eager"
+      />
       <h1 class="script">{site.tagline}</h1>
       <p class="sub">
         Small-group yoga in <span class="todo">{site.location}</span>, for
@@ -112,8 +120,8 @@ import classes from '../data/classes.json';
   }
 
   .hero-logo {
-    width: clamp(13rem, 30vw, 17rem);
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    width: clamp(16rem, 36vw, 21rem);
+    height: auto;
   }
 
   h1 {
