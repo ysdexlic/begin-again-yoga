@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Begin Again Yoga — every day is a chance to begin again"
+  description="Small-group yoga for every body and every level. Full site arriving soon."
+>
+  <section class="wrap">
+    <p class="script accent">Every day is a chance to begin again.</p>
+    <h1>Begin Again Yoga</h1>
+    <p>
+      Home page sections land in Phase 3 —
+      <span class="todo">TODO: hero, value strip, intro, class preview</span>
+    </p>
+  </section>
+</Base>
+
+<style>
+  section {
+    padding-block: var(--space-section);
+  }
+
+  .accent {
+    font-size: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+    color: var(--sage-deep);
+  }
+</style>

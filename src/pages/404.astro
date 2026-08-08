@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/href';
+---
+
+<Base
+  title="Page not found · Begin Again Yoga"
+  description="This path doesn't exist. Take a breath and begin again at home."
+>
+  <section class="wrap">
+    <p class="script accent">This path doesn't exist.</p>
+    <h1>Page not found</h1>
+    <p>Take a breath and begin again at home.</p>
+    <p><a href={href('/')}>Back to the beginning</a></p>
+  </section>
+</Base>
+
+<style>
+  section {
+    padding-block: var(--space-section);
+    text-align: center;
+  }
+
+  section p {
+    margin-inline: auto;
+  }
+
+  .accent {
+    font-size: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+    color: var(--sage-deep);
+  }
+</style>

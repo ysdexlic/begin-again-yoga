@@ -21,12 +21,12 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 1 — Scaffold & design system
 
-- [ ] Scaffold Astro 5 minimal template into the repo root (commands in TECH.md §Scaffolding), TypeScript strict, keep existing files
-- [ ] `astro.config.mjs` with `site`/`base` per TECH.md, `@astrojs/sitemap` integration
-- [ ] Install fonts via @fontsource: Allura, Cormorant Garamond, Karla (BRAND §3)
-- [ ] `src/styles/global.css`: modern reset, all design tokens from BRAND §2–3, fluid type scale, visible focus styles, `prefers-reduced-motion` guard
-- [ ] `src/layouts/Base.astro`: head with per-page title/description props, fonts, skip-link, header/footer
-- [ ] `Header` (logo + nav) and `Footer` (icon strip, contact, credit) components; mobile nav without a framework (CSS-only or ≤10 lines of inline script)
+- [x] Scaffold Astro 5 minimal template into the repo root (commands in TECH.md §Scaffolding), TypeScript strict, keep existing files
+- [x] `astro.config.mjs` with `site`/`base` per TECH.md, `@astrojs/sitemap` integration
+- [x] Install fonts via @fontsource: Allura, Cormorant Garamond, Karla (BRAND §3)
+- [x] `src/styles/global.css`: modern reset, all design tokens from BRAND §2–3, fluid type scale, visible focus styles, `prefers-reduced-motion` guard
+- [x] `src/layouts/Base.astro`: head with per-page title/description props, fonts, skip-link, header/footer
+- [x] `Header` (logo + nav) and `Footer` (icon strip, contact, credit) components; mobile nav without a framework (CSS-only or ≤10 lines of inline script)
 - **Acceptance:** empty pages render with correct fonts and colors; nav is usable at 360px wide and by keyboard.
 
 ## Phase 2 — Brand assets (SVG)

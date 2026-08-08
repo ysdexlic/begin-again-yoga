@@ -1,0 +1,85 @@
+---
+import { href } from '../lib/href';
+
+const values = [
+  'New Beginning',
+  'A New Path',
+  'Growth',
+  'Self Love',
+  'Pause. Breathe. Reset.',
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer band-dark">
+  <div class="wrap">
+    <ul class="values" role="list">
+      {values.map((value) => <li><span class="label">{value}</span></li>)}
+    </ul>
+
+    <div class="contact">
+      <p class="script tagline">Every day is a chance to begin again.</p>
+      <ul role="list">
+        <li>Email: <span class="todo">TODO: address</span></li>
+        <li>Instagram: <span class="todo">TODO: handle</span></li>
+        <li>Location: <span class="todo">[LOCATION]</span></li>
+      </ul>
+      <p>
+        <a href={href('/contact/')}>Get in touch</a> — beginners are always
+        welcome to just ask questions.
+      </p>
+    </div>
+
+    <p class="credit">&copy; {year} Begin Again Yoga</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-section);
+    padding-block: 3.5rem 2rem;
+  }
+
+  .values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    column-gap: 2.5rem;
+    row-gap: 1rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+  }
+
+  .values .label {
+    font-size: 0.6875rem;
+  }
+
+  .contact {
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    padding-block: 2.5rem;
+    text-align: center;
+  }
+
+  .contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    font-size: var(--text-small);
+  }
+
+  .tagline {
+    font-size: 1.625rem;
+  }
+
+  .credit {
+    margin-inline: auto;
+    font-size: var(--text-small);
+    text-align: center;
+  }
+</style>

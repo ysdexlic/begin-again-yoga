@@ -1,0 +1,191 @@
+---
+import { href } from '../lib/href';
+
+const nav = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about/' },
+  { label: 'Classes', path: '/classes/' },
+  { label: 'Contact', path: '/contact/' },
+];
+
+const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
+const isCurrent = (path: string) =>
+  normalize(Astro.url.pathname) === normalize(href(path));
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href={href('/')} aria-label="Begin Again Yoga — home">
+      <span aria-hidden="true">
+        <span class="brand-script script">Begin Again</span>
+        <span class="brand-label label">— Yoga —</span>
+      </span>
+    </a>
+
+    <nav aria-label="Main">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            class="i-bars"
+            d="M4 7.5h16M4 12h16M4 16.5h16"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
+          <path
+            class="i-close"
+            d="M6.5 6.5l11 11M17.5 6.5l-11 11"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
+        </svg>
+      </button>
+
+      <ul id="site-nav" role="list">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={href(item.path)}
+                aria-current={isCurrent(item.path) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('site-nav');
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open', !open);
+  });
+  menu.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    toggle.focus();
+  });
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    border-bottom: 1px solid var(--taupe);
+    background: var(--cream);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.875rem;
+  }
+
+  .brand {
+    text-decoration: none;
+  }
+
+  .brand > span {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .brand-script {
+    font-size: 1.75rem;
+    color: var(--sage-deep);
+  }
+
+  .brand-label {
+    font-size: 0.6875rem;
+  }
+
+  .nav-toggle {
+    display: none;
+    padding: 0.5rem;
+    border: 0;
+    background: none;
+    color: var(--sage-deep);
+    cursor: pointer;
+  }
+
+  .nav-toggle .i-close {
+    display: none;
+  }
+
+  .nav-toggle[aria-expanded='true'] .i-close {
+    display: block;
+  }
+
+  .nav-toggle[aria-expanded='true'] .i-bars {
+    display: none;
+  }
+
+  #site-nav {
+    display: flex;
+    gap: 1.75rem;
+  }
+
+  #site-nav a {
+    font-weight: 500;
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    color: var(--sage-deep);
+    text-decoration: none;
+    padding-block: 0.25rem;
+  }
+
+  #site-nav a:hover {
+    color: var(--terracotta-ink);
+  }
+
+  #site-nav a[aria-current='page'] {
+    color: var(--terracotta-ink);
+    text-decoration: underline;
+    text-underline-offset: 0.35em;
+  }
+
+  @media (max-width: 47.99rem) {
+    .nav-toggle {
+      display: inline-flex;
+    }
+
+    #site-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 1.25rem 1rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--taupe);
+    }
+
+    #site-nav.open {
+      display: flex;
+    }
+
+    #site-nav a {
+      display: block;
+      padding-block: 0.75rem;
+      font-size: 1.0625rem;
+    }
+  }
+</style>
