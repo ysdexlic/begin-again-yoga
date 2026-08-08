@@ -3,7 +3,9 @@
 Marketing website for Ardita's yoga practice — soft, earthy, one breath at a time.
 Static site, hosted for free on GitHub Pages.
 
-**Status: planning complete — build not started.**
+**Status: Phases 1–5 built (placeholder content).** Awaiting owner: publish the
+repo + enable Pages (Phase 5), answer the Phase 0 questions, then Phase 6 swaps
+in real content.
 
 ## Documentation map
 
