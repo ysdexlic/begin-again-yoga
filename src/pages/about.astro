@@ -1,22 +1,169 @@
 ---
 import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import PhotoPlaceholder from '../components/PhotoPlaceholder.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import HillDivider from '../components/HillDivider.astro';
+import { href } from '../lib/href';
+
+const philosophy = [
+  {
+    icon: 'sprout',
+    title: 'Growth',
+    text: 'Small steps, taken kindly, add up. Progress here is quieter than a headstand — it sounds like breathing a little easier.',
+  },
+  {
+    icon: 'heart',
+    title: 'Self Love',
+    text: "You practise with the body you have today. Nothing to fix, nothing to prove — you're met exactly where you are.",
+  },
+  {
+    icon: 'circle',
+    title: 'Pause. Breathe. Reset.',
+    text: 'An hour that belongs to you. Put the week down at the door; it will keep.',
+  },
+] as const;
 ---
 
 <Base
   title="About · Begin Again Yoga"
-  description="The story and philosophy behind Begin Again Yoga. Full page arriving soon."
+  description="The story and philosophy behind Begin Again Yoga — starting over without judgment, one breath at a time."
 >
-  <section class="wrap">
-    <h1>About</h1>
+  <section class="wrap head">
+    <SectionLabel text="About" />
+    <h1>Begin again, every day</h1>
+  </section>
+
+  <section class="wrap story">
+    <div class="story-text">
+      <h2>Why &ldquo;begin again&rdquo;</h2>
+      <p>
+        <span class="todo">
+          TODO: Ardita's own words, ~150 words — her story, and what returning
+          to the mat means to her.
+        </span>
+      </p>
+    </div>
+    <PhotoPlaceholder label="Photo — TODO" />
+  </section>
+
+  <HillDivider />
+
+  <section class="wrap philosophy">
+    <h2 class="center">How this practice feels</h2>
+    <ul class="blocks" role="list">
+      {
+        philosophy.map((p) => (
+          <li>
+            <Icon name={p.icon} size={30} />
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="wrap trainings">
+    <h2>Trainings &amp; background</h2>
     <p>
-      Story, philosophy and trainings land in Phase 3 —
-      <span class="todo">TODO: see docs/CONTENT.md §About</span>
+      <span class="todo">
+        TODO: certifications (e.g. 200hr YTT), teachers, style.
+      </span>
     </p>
+    <PhotoPlaceholder label="Photo — TODO" />
+  </section>
+
+  <section class="wrap closing">
+    <p class="script closing-line">Come as you are.</p>
+    <Button href={href('/classes/')}>See classes &amp; schedule</Button>
   </section>
 </Base>
 
 <style>
-  section {
-    padding-block: var(--space-section);
+  .head {
+    padding-block: clamp(3rem, 6vw, 5rem) 0;
+    text-align: center;
+  }
+
+  .head h1 {
+    margin-inline: auto;
+  }
+
+  .story {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-block: calc(var(--space-section) / 1.5);
+  }
+
+  .story p,
+  .trainings p {
+    max-width: 55ch;
+  }
+
+  .philosophy {
+    padding-block: calc(var(--space-section) / 1.5);
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .blocks li {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 0.625rem;
+    color: var(--sage-deep);
+  }
+
+  .blocks p {
+    color: var(--ink);
+    font-size: var(--text-small);
+  }
+
+  .trainings {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-block: calc(var(--space-section) / 1.5) 0;
+  }
+
+  .closing {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    padding-block: var(--space-section) 0;
+    text-align: center;
+  }
+
+  .closing-line {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--sage-deep);
+  }
+
+  @media (max-width: 47.99rem) {
+    .story,
+    .trainings,
+    .blocks {
+      grid-template-columns: 1fr;
+    }
+
+    .story,
+    .trainings {
+      justify-items: center;
+      text-align: center;
+    }
   }
 </style>

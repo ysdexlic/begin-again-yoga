@@ -1,0 +1,45 @@
+---
+/**
+ * Watercolor-blob photo frame (BRAND §5: organic blobs, never hard
+ * rectangles). Renders an obvious placeholder until Phase 6 swaps in real
+ * photography via astro:assets.
+ */
+interface Props {
+  label?: string;
+}
+
+const { label = 'Photo — TODO' } = Astro.props;
+---
+
+<figure class="blob-frame">
+  <svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
+    <path
+      class="blob"
+      d="M100 12c30 0 62 10 76 34 14 25 8 58-6 82s-38 42-68 42-58-16-74-42S10 66 26 42 70 12 100 12Z"
+    ></path>
+  </svg>
+  <figcaption><span class="todo">{label}</span></figcaption>
+</figure>
+
+<style>
+  .blob-frame {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(100%, 320px);
+  }
+
+  .blob-frame svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .blob {
+    fill: var(--sand);
+  }
+
+  figcaption {
+    position: absolute;
+    font-size: var(--text-small);
+  }
+</style>

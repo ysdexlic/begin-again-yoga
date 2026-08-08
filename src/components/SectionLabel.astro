@@ -1,0 +1,21 @@
+---
+/**
+ * Tracked serif eyebrow with flanking em-dashes — the `— YOGA —` treatment
+ * (BRAND §3/§4). Dashes are decorative and hidden from assistive tech.
+ */
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<p class="label eyebrow">
+  <span aria-hidden="true">—&nbsp;</span>{text}<span aria-hidden="true">&nbsp;—</span>
+</p>
+
+<style>
+  .eyebrow {
+    margin-bottom: 0.875rem;
+  }
+</style>

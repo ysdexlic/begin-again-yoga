@@ -1,29 +1,23 @@
 ---
 import { href } from '../lib/href';
-
-const values = [
-  'New Beginning',
-  'A New Path',
-  'Growth',
-  'Self Love',
-  'Pause. Breathe. Reset.',
-];
+import ValueStrip from './ValueStrip.astro';
+import site from '../data/site.json';
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer band-dark">
   <div class="wrap">
-    <ul class="values" role="list">
-      {values.map((value) => <li><span class="label">{value}</span></li>)}
-    </ul>
+    <div class="strip">
+      <ValueStrip />
+    </div>
 
     <div class="contact">
-      <p class="script tagline">Every day is a chance to begin again.</p>
+      <p class="script tagline">{site.tagline}</p>
       <ul role="list">
-        <li>Email: <span class="todo">TODO: address</span></li>
-        <li>Instagram: <span class="todo">TODO: handle</span></li>
-        <li>Location: <span class="todo">[LOCATION]</span></li>
+        <li>Email: <span class="todo">{site.email}</span></li>
+        <li>Instagram: <span class="todo">{site.instagram}</span></li>
+        <li>Location: <span class="todo">{site.location}</span></li>
       </ul>
       <p>
         <a href={href('/contact/')}>Get in touch</a> — beginners are always
@@ -31,7 +25,7 @@ const year = new Date().getFullYear();
       </p>
     </div>
 
-    <p class="credit">&copy; {year} Begin Again Yoga</p>
+    <p class="credit">&copy; {year} {site.name}</p>
   </div>
 </footer>
 
@@ -41,19 +35,9 @@ const year = new Date().getFullYear();
     padding-block: 3.5rem 2rem;
   }
 
-  .values {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    column-gap: 2.5rem;
-    row-gap: 1rem;
+  .strip {
     padding-bottom: 2.5rem;
     border-bottom: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
-  }
-
-  .values .label {
-    font-size: 0.6875rem;
   }
 
   .contact {

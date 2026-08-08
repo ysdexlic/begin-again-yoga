@@ -1,22 +1,114 @@
 ---
 import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import Icon from '../components/Icon.astro';
+import site from '../data/site.json';
+
+const emailReady = !site.email.startsWith('TODO');
+const instaReady = !site.instagram.startsWith('TODO');
 ---
 
 <Base
   title="Contact · Begin Again Yoga"
-  description="Get in touch about classes — beginners welcome. Full page arriving soon."
+  description="Get in touch about classes, bookings or first-timer questions — beginners are always welcome to just ask."
 >
-  <section class="wrap">
-    <h1>Contact</h1>
-    <p>
-      Email, Instagram and location land in Phase 3 —
-      <span class="todo">TODO: see docs/CONTENT.md §Contact</span>
+  <section class="wrap head">
+    <SectionLabel text="Contact" />
+    <h1>Say hello</h1>
+    <p class="warm">
+      Questions, first-time nerves, or booking a spot — all equally good
+      reasons to write. I'll get back to you as soon as I can.
+    </p>
+  </section>
+
+  <section class="wrap ways">
+    <h2 class="visually-hidden">Ways to reach me</h2>
+    <ul role="list">
+      <li>
+        <Icon name="heart" size={28} />
+        <h3>Email</h3>
+        {
+          emailReady ? (
+            <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          ) : (
+            <p><span class="todo">{site.email}</span></p>
+          )
+        }
+      </li>
+      <li>
+        <Icon name="sunrise" size={28} />
+        <h3>Instagram</h3>
+        {
+          instaReady ? (
+            <p><a href={site.instagramUrl}>{site.instagram}</a></p>
+          ) : (
+            <p><span class="todo">{site.instagram}</span></p>
+          )
+        }
+      </li>
+      <li>
+        <Icon name="path" size={28} />
+        <h3>Where</h3>
+        <p>
+          <span class="todo">{site.location}</span> —
+          <span class="todo">map link TODO</span>
+        </p>
+      </li>
+    </ul>
+    <p class="note">
+      No contact form here for now — a plain message is perfect.
     </p>
   </section>
 </Base>
 
 <style>
-  section {
-    padding-block: var(--space-section);
+  .head {
+    padding-block: clamp(3rem, 6vw, 5rem) 0;
+    text-align: center;
+  }
+
+  .head h1,
+  .head .warm {
+    margin-inline: auto;
+  }
+
+  .warm {
+    margin-top: 1rem;
+    max-width: 48ch;
+  }
+
+  .ways {
+    padding-block: calc(var(--space-section) / 1.5);
+  }
+
+  .ways ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .ways li {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    color: var(--sage-deep);
+  }
+
+  .ways p {
+    color: var(--ink);
+    font-size: var(--text-small);
+  }
+
+  .note {
+    margin: 3rem auto 0;
+    text-align: center;
+    font-size: var(--text-small);
+  }
+
+  @media (max-width: 47.99rem) {
+    .ways ul {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

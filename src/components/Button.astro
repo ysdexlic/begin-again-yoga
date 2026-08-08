@@ -1,0 +1,46 @@
+---
+/**
+ * Brand button. Primary = terracotta-ink background + cream text — the only
+ * approved button combination (BRAND §2). `quiet` is a sage-deep outline for
+ * secondary actions.
+ */
+interface Props {
+  href: string;
+  variant?: 'primary' | 'quiet';
+}
+
+const { href, variant = 'primary' } = Astro.props;
+---
+
+<a class:list={['btn', variant]} href={href}><slot /></a>
+
+<style>
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background-color 200ms ease-out, color 200ms ease-out;
+  }
+
+  .primary {
+    background: var(--terracotta-ink);
+    color: var(--cream);
+  }
+
+  .primary:hover {
+    background: var(--sage-deep);
+  }
+
+  .quiet {
+    border: 1px solid var(--sage-deep);
+    color: var(--sage-deep);
+  }
+
+  .quiet:hover {
+    background: var(--sage-deep);
+    color: var(--cream);
+  }
+</style>
