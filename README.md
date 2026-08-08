@@ -1,6 +1,6 @@
 # Begin Again Yoga 🌿
 
-Marketing website for [NAME]'s yoga practice — soft, earthy, one breath at a time.
+Marketing website for Ardita's yoga practice — soft, earthy, one breath at a time.
 Static site, hosted for free on GitHub Pages.
 
 **Status: planning complete — build not started.**

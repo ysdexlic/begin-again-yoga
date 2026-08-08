@@ -1,7 +1,7 @@
 # Content Plan
 
 **Placeholder policy:** build every page now with clearly marked placeholders —
-`[NAME]`, `[LOCATION]`, `TODO:` — so real copy drops in later without layout work.
+`[LOCATION]`, `TODO:` — so real copy drops in later without layout work.
 Placeholders must *look* like placeholders. Never invent real-sounding schedules,
 prices, addresses, or certifications.
 
@@ -27,7 +27,7 @@ Pricing lives on the Classes page for v1; split into its own page only if it gro
    primary button "See classes" → /classes/; text link "Get in touch" → /contact/.
 2. **Value strip** — the five brand icons with tracked labels (NEW BEGINNING · A NEW
    PATH · GROWTH · SELF LOVE · PAUSE. BREATHE. RESET.), as on the brand board.
-3. **Intro** — short welcome from [NAME] (2–3 sentences, first person), portrait
+3. **Intro** — short welcome from Ardita (2–3 sentences, first person), portrait
    placeholder in a watercolor-blob frame, link to About.
 4. **Classes preview** — three class cards from `classes.json`, link to full page.
 5. **Quote band** — sage-deep background, script pull-quote "Pause. Breathe. Reset."
@@ -37,7 +37,7 @@ Pricing lives on the Classes page for v1; split into its own page only if it gro
 ## About
 
 - Her story: why "begin again" — what returning to the mat means to her.
-  `TODO: [NAME]'s own words, ~150 words.`
+  `TODO: Ardita's own words, ~150 words.`
 - Philosophy: 3 short blocks keyed to brand icons (e.g. Growth / Self Love / Pause).
 - Trainings & background: `TODO: certifications (e.g. 200hr YTT), teachers, style.`
 - 1–2 photo placeholders; closing CTA to Classes.
@@ -71,9 +71,9 @@ line "Take a breath and begin again at home." → button to /.
 
 ---
 
-## Open questions for [NAME]  *(answers unblock Phase 6)*
+## Open questions for Ardita  *(answers unblock Phase 6)*
 
-- [ ] Name as it should appear on the site + short bio + 2–3 photos
+- [ ] How her name should appear on the site (Ardita? full name?) + short bio + 2–3 photos
 - [ ] Location: studio address / online / in-home visits?
 - [ ] Class types with names, levels, durations, descriptions
 - [ ] Weekly schedule

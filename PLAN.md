@@ -65,7 +65,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 6 — Real content (needs Phase 0 answers)
 
-- [ ] Replace `[NAME]`/`[LOCATION]`/TODO placeholders from the owner's answers
+- [ ] Replace `[LOCATION]`/TODO placeholders from Ardita's answers
 - [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5)
 - [ ] Optional: contact form via Formspree; booking embed; custom domain (TECH.md §Custom domain)
 

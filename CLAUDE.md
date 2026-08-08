@@ -16,7 +16,7 @@ Before any work, read in order:
   Astro static output only.
 - Colors and fonts come exclusively from the CSS custom properties in
   `src/styles/global.css`. Never hardcode a hex in a component.
-- Placeholders (`[NAME]`, `[LOCATION]`, `TODO:`) stay visibly placeholder until the
+- Placeholders (`[LOCATION]`, `TODO:`) stay visibly placeholder until the
   owner supplies real content. **Never invent real-sounding schedules, prices,
   addresses, phone numbers, or certifications.**
 - Respect the contrast rules in BRAND.md §2 — they were checked; don't freestyle
