@@ -15,7 +15,7 @@ Phase 6 only.
 Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 - [x] Add the brand board image (the logo/palette reference) as `docs/brand-board.jpg`
-- [ ] Confirm GitHub repo name (plan assumes `begin-again-yoga` — see TECH.md if different)
+- [x] Confirm GitHub repo name (plan assumes `begin-again-yoga` — see TECH.md if different) — confirmed: repo exists as `ysdexlic/begin-again-yoga`, matching `base`
 - [ ] Custom domain yes/no (affects `base` config — TECH.md §Deployment)
 - [ ] Answer the "Open questions" list at the bottom of docs/CONTENT.md
 
