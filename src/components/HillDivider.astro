@@ -1,0 +1,48 @@
+---
+/**
+ * Layered rolling-hills section divider (docs/BRAND.md §4) — sand and sage
+ * at low opacity. Sits flush against the section below it; `flip` mirrors
+ * it vertically for use at a section's end.
+ */
+interface Props {
+  flip?: boolean;
+}
+
+const { flip = false } = Astro.props;
+---
+
+<svg
+  class:list={['hills', { flip }]}
+  viewBox="0 0 1440 90"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <path
+    class="hill-sand"
+    d="M0 74C220 26 470 22 720 56c250 34 500 30 720-12v46H0Z"></path>
+  <path
+    class="hill-sage"
+    d="M0 90c300-52 610-56 890-24 220 25 400 22 550 2v22H0Z"></path>
+</svg>
+
+<style>
+  .hills {
+    display: block;
+    width: 100%;
+    height: clamp(3rem, 7vw, 5.625rem);
+  }
+
+  .hills.flip {
+    transform: scaleY(-1);
+  }
+
+  .hill-sand {
+    fill: var(--sand);
+    opacity: 0.5;
+  }
+
+  .hill-sage {
+    fill: var(--sage);
+    opacity: 0.35;
+  }
+</style>

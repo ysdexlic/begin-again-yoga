@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import { href } from '../lib/href';
+---
+
+<Base
+  title="Page not found · Begin Again Yoga"
+  description="This path doesn't exist. Take a breath and begin again at home."
+>
+  <section class="wrap lost">
+    <div class="mark"><Icon name="path" size={48} /></div>
+    <p class="script accent">This path doesn't exist.</p>
+    <h1>Page not found</h1>
+    <p>Take a breath and begin again at home.</p>
+    <Button href={href('/')}>Back to the beginning</Button>
+  </section>
+</Base>
+
+<style>
+  .lost {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    padding-block: var(--space-section);
+    text-align: center;
+  }
+
+  .mark {
+    color: var(--sage-deep);
+  }
+
+  .lost p {
+    margin-inline: auto;
+  }
+
+  .accent {
+    font-size: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+    color: var(--sage-deep);
+  }
+</style>

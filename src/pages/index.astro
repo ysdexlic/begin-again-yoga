@@ -1,0 +1,214 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import logo from '../assets/brand/logo-transparent.png';
+import ValueStrip from '../components/ValueStrip.astro';
+import ClassCard from '../components/ClassCard.astro';
+import QuoteBand from '../components/QuoteBand.astro';
+import HillDivider from '../components/HillDivider.astro';
+import PhotoPlaceholder from '../components/PhotoPlaceholder.astro';
+import Button from '../components/Button.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import Icon from '../components/Icon.astro';
+import { href } from '../lib/href';
+import site from '../data/site.json';
+import classes from '../data/classes.json';
+---
+
+<Base
+  title="Begin Again Yoga — small-group yoga for every body"
+  description="Small-group yoga for every body and every level. Slow flow, restorative and beginners' classes — schedule and pricing coming soon."
+>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <Image
+        class="hero-logo"
+        src={logo}
+        alt="Begin Again Yoga"
+        width={288}
+        densities={[1, 2]}
+        loading="eager"
+      />
+      <h1 class="script">{site.tagline}</h1>
+      <p class="sub">
+        Small-group yoga in <span class="todo">{site.location}</span>, for
+        every body and every level.
+      </p>
+      <div class="cta">
+        <Button href={href('/classes/')}>See classes</Button>
+        <a href={href('/contact/')}>Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap"><ValueStrip /></div>
+  </section>
+
+  <HillDivider />
+
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <PhotoPlaceholder label="Portrait — TODO" />
+      <div class="intro-text">
+        <SectionLabel text="Welcome" />
+        <h2>A small, unhurried practice</h2>
+        <p>
+          Hi, I'm Ardita. Begin Again is a small, friendly practice for people
+          who want to move gently — whether it's your first class or your
+          five-hundredth. Whatever brings you here, you're welcome.
+        </p>
+        <p><a href={href('/about/')}>More about me and this practice</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="preview">
+    <div class="wrap center">
+      <SectionLabel text="Classes" />
+      <h2>Ways to practise</h2>
+      <div class="cards">
+        {classes.map((c) => <ClassCard {...c} />)}
+      </div>
+      <p><a href={href('/classes/')}>Full schedule &amp; pricing</a></p>
+    </div>
+  </section>
+
+  <QuoteBand quote={site.taglineAlt} />
+
+  <section class="practical">
+    <h2 class="visually-hidden">Practical details</h2>
+    <ul class="wrap cols" role="list">
+      <li>
+        <Icon name="path" size={28} />
+        <h3>Where</h3>
+        <p>
+          <span class="todo">{site.location}</span> —
+          <span class="todo">map link TODO</span>
+        </p>
+      </li>
+      <li>
+        <Icon name="sunrise" size={28} />
+        <h3>When</h3>
+        <p>
+          The weekly timetable is being finalised.
+          <a href={href('/classes/')}>See classes &amp; schedule</a>
+        </p>
+      </li>
+      <li>
+        <Icon name="heart" size={28} />
+        <h3>Say hello</h3>
+        <p>
+          Message to reserve a spot, or just to ask.
+          <a href={href('/contact/')}>Get in touch</a>
+        </p>
+      </li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-block: clamp(3rem, 6vw, 5.5rem) 0;
+  }
+
+  .hero-inner {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .hero-logo {
+    width: clamp(16rem, 36vw, 21rem);
+    height: auto;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 1.5rem + 2.6vw, 3.25rem);
+    color: var(--sage-deep);
+    max-width: 18ch;
+  }
+
+  .sub {
+    font-size: 1.125rem;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .strip {
+    padding-block: var(--space-section) calc(var(--space-section) / 2);
+  }
+
+  .intro {
+    padding-block: calc(var(--space-section) / 2);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .preview {
+    padding-block: var(--space-section);
+  }
+
+  .center {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+
+  .practical {
+    padding-block: var(--space-section) 0;
+  }
+
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .cols li {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    color: var(--sage-deep);
+  }
+
+  .cols p {
+    color: var(--ink);
+    font-size: var(--text-small);
+  }
+
+  @media (max-width: 47.99rem) {
+    .intro-grid,
+    .cards,
+    .cols {
+      grid-template-columns: 1fr;
+    }
+
+    .intro-grid {
+      justify-items: center;
+      text-align: center;
+    }
+  }
+</style>

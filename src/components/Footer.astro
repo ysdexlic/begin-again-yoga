@@ -1,0 +1,69 @@
+---
+import { href } from '../lib/href';
+import ValueStrip from './ValueStrip.astro';
+import site from '../data/site.json';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer band-dark">
+  <div class="wrap">
+    <div class="strip">
+      <ValueStrip />
+    </div>
+
+    <div class="contact">
+      <p class="script tagline">{site.tagline}</p>
+      <ul role="list">
+        <li>Email: <span class="todo">{site.email}</span></li>
+        <li>Instagram: <span class="todo">{site.instagram}</span></li>
+        <li>Location: <span class="todo">{site.location}</span></li>
+      </ul>
+      <p>
+        <a href={href('/contact/')}>Get in touch</a> — beginners are always
+        welcome to just ask questions.
+      </p>
+    </div>
+
+    <p class="credit">&copy; {year} {site.name}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-section);
+    padding-block: 3.5rem 2rem;
+  }
+
+  .strip {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+  }
+
+  .contact {
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    padding-block: 2.5rem;
+    text-align: center;
+  }
+
+  .contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    font-size: var(--text-small);
+  }
+
+  .tagline {
+    font-size: 1.625rem;
+  }
+
+  .credit {
+    margin-inline: auto;
+    font-size: var(--text-small);
+    text-align: center;
+  }
+</style>

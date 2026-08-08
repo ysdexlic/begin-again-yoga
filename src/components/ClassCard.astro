@@ -1,0 +1,70 @@
+---
+/**
+ * One class type (data from src/data/classes.json). Unconfirmed classes show
+ * a visible `TODO: confirm` chip until the owner signs them off.
+ */
+import Icon from './Icon.astro';
+import type { IconName } from './Icon.astro';
+
+interface Props {
+  name: string;
+  confirmed: boolean;
+  level: string;
+  duration: string;
+  icon: string;
+  description: string;
+}
+
+const { name, confirmed, level, duration, icon, description } = Astro.props;
+---
+
+<article class="card">
+  <div class="card-icon"><Icon name={icon as IconName} size={30} /></div>
+  <h3>
+    {name}
+    {!confirmed && <span class="todo">TODO: confirm</span>}
+  </h3>
+  <p class="meta">
+    <span class="todo">{level}</span> · <span class="todo">{duration}</span>
+  </p>
+  <p class="desc">{description}</p>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 1.75rem 1.5rem;
+    background: var(--sand);
+    border-radius: var(--radius-card);
+  }
+
+  .card-icon {
+    color: var(--sage-deep);
+  }
+
+  /* On sand, ink is the only approved reading color (BRAND §2) —
+     sage-deep on sand is 3.49:1 and fails AA at this size. */
+  h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    color: var(--ink);
+  }
+
+  h3 .todo {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+
+  .meta {
+    font-size: var(--text-small);
+  }
+
+  .desc {
+    margin-top: 0.25rem;
+  }
+</style>

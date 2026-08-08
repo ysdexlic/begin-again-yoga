@@ -1,0 +1,26 @@
+---
+/**
+ * Full-width sage-deep band with a script pull-quote (BRAND §2/§3).
+ */
+interface Props {
+  quote: string;
+}
+
+const { quote } = Astro.props;
+---
+
+<aside class="band-dark quote-band">
+  <p class="script quote wrap">{quote}</p>
+</aside>
+
+<style>
+  .quote-band {
+    padding-block: clamp(3.5rem, 7vw, 5.5rem);
+    text-align: center;
+  }
+
+  .quote {
+    font-size: clamp(2rem, 1.6rem + 2vw, 3.25rem);
+    margin-inline: auto;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+/**
+ * The five brand icons (docs/BRAND.md §4) — thin strokes on a 24px grid,
+ * rounded caps, no fills. Color inherits via currentColor (sage-deep in
+ * normal flow, cream inside .band-dark).
+ *
+ * Decorative by default; pass `title` when the icon carries meaning.
+ */
+export type IconName = 'sunrise' | 'path' | 'sprout' | 'heart' | 'circle';
+
+interface Props {
+  name: IconName;
+  size?: number;
+  title?: string;
+}
+
+const { name, size = 24, title } = Astro.props;
+
+const paths: Record<IconName, string[]> = {
+  // Rising sun over a horizon line — New Beginning
+  sunrise: [
+    'M3.5 17.5h17',
+    'M7.5 17.5a4.5 4.5 0 0 1 9 0',
+    'M12 11.7V9.3',
+    'M16.1 13.4l1.7-1.7',
+    'M7.9 13.4l-1.7-1.7',
+    'M17.6 15.4l2.2-.8',
+    'M6.4 15.4l-2.2-.8',
+  ],
+  // Winding S-curve path — A New Path
+  path: ['M7 21c7.5-3.5-2.5-9 4-12.5 4-2.2 5.4-3.3 6-5.5'],
+  // Sprout with two leaves — Growth
+  sprout: [
+    'M12 20.5c0-6 0-8.5 0-9.5',
+    'M12 14.5C9.5 14.5 8 13 7.6 10.6c2.5 0 4.1 1.4 4.4 3.9Z',
+    'M12 11c0-3 1.8-4.8 4.6-5-.2 2.8-1.9 4.7-4.6 5Z',
+  ],
+  // Open line heart — Self Love
+  heart: [
+    'M12 19c-2-1.8-6.2-5-6.2-8.6a3.4 3.4 0 0 1 6.2-2 3.4 3.4 0 0 1 6.2 2C18.2 14 14 17.2 12 19Z',
+  ],
+  // Hand-drawn open circle (ensō) — Pause. Breathe. Reset.
+  circle: ['M14.8 4.8A8.2 8.2 0 1 0 19.6 9.4'],
+};
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  role={title ? 'img' : undefined}
+  aria-hidden={title ? undefined : 'true'}
+>
+  {title && <title>{title}</title>}
+  {paths[name].map((d) => <path d={d}></path>)}
+</svg>

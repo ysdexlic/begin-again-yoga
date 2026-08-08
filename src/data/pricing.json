@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Drop-in",
+    "price": "TODO",
+    "detail": "One class, no strings. Come see how it feels."
+  },
+  {
+    "name": "Class pass",
+    "price": "TODO",
+    "detail": "A small bundle for regulars. TODO: number of classes."
+  },
+  {
+    "name": "Private 1-to-1",
+    "price": "TODO",
+    "detail": "A session shaped entirely around you."
+  }
+]

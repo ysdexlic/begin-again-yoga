@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import ClassCard from '../components/ClassCard.astro';
+import ScheduleTable from '../components/ScheduleTable.astro';
+import PriceCard from '../components/PriceCard.astro';
+import Button from '../components/Button.astro';
+import HillDivider from '../components/HillDivider.astro';
+import { href } from '../lib/href';
+import classes from '../data/classes.json';
+import pricing from '../data/pricing.json';
+
+const firstTime = [
+  'Arrive about 10 minutes early so you can settle in.',
+  'Mats provided — TODO: confirm.',
+  'Wear anything you can move comfortably in.',
+  "There's nothing to prove. Rest whenever you like.",
+];
+---
+
+<Base
+  title="Classes & Schedule · Begin Again Yoga"
+  description="Class types, the weekly schedule and pricing for Begin Again Yoga — small-group classes for every level."
+>
+  <section class="wrap head">
+    <SectionLabel text="Classes" />
+    <h1>Classes &amp; Schedule</h1>
+  </section>
+
+  <section class="wrap">
+    <h2 class="visually-hidden">Class types</h2>
+    <div class="cards">
+      {classes.map((c) => <ClassCard {...c} />)}
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <h2>Weekly schedule</h2>
+    <ScheduleTable />
+  </section>
+
+  <HillDivider />
+
+  <section class="wrap block">
+    <h2>Pricing</h2>
+    <div class="cards prices">
+      {pricing.map((p) => <PriceCard {...p} />)}
+    </div>
+    <p class="booking">
+      No booking system here — just
+      <a href={href('/contact/')}>message to reserve a spot</a>.
+    </p>
+  </section>
+
+  <section class="wrap block">
+    <h2>Your first time?</h2>
+    <ul class="first-time">
+      {
+        firstTime.map((item) =>
+          item.includes('TODO') ? (
+            <li>
+              {item.split('—')[0].trim()} —
+              <span class="todo">{item.split('—')[1].trim()}</span>
+            </li>
+          ) : (
+            <li>{item}</li>
+          )
+        )
+      }
+    </ul>
+    <Button href={href('/contact/')} variant="quiet">
+      Ask a question first
+    </Button>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(3rem, 6vw, 5rem) 2.5rem;
+    text-align: center;
+  }
+
+  .head h1 {
+    margin-inline: auto;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .block {
+    padding-block: calc(var(--space-section) / 1.75);
+  }
+
+  .prices {
+    margin-top: 1.5rem;
+  }
+
+  .booking {
+    margin-top: 1.5rem;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .first-time {
+    margin: 1rem 0 1.75rem;
+    padding-left: 1.25rem;
+    line-height: 2.1;
+  }
+
+  .first-time li::marker {
+    color: var(--sage-deep);
+  }
+
+  @media (max-width: 47.99rem) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

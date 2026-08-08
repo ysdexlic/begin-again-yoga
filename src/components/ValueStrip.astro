@@ -1,0 +1,54 @@
+---
+/**
+ * The five brand icons with tracked labels, as on the brand board's footer
+ * strip. Inherits currentColor — sage-deep on cream, cream inside .band-dark.
+ */
+import Icon from './Icon.astro';
+import type { IconName } from './Icon.astro';
+
+const values: { icon: IconName; label: string }[] = [
+  { icon: 'sunrise', label: 'New Beginning' },
+  { icon: 'path', label: 'A New Path' },
+  { icon: 'sprout', label: 'Growth' },
+  { icon: 'heart', label: 'Self Love' },
+  { icon: 'circle', label: 'Pause. Breathe. Reset.' },
+];
+---
+
+<ul class="values" role="list">
+  {
+    values.map(({ icon, label }) => (
+      <li>
+        <Icon name={icon} size={28} />
+        <span class="label">{label}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: clamp(1.5rem, 4vw, 3.5rem);
+    row-gap: 1.5rem;
+  }
+
+  .values li {
+    display: grid;
+    justify-items: center;
+    gap: 0.625rem;
+    color: var(--sage-deep);
+  }
+
+  :global(.band-dark) .values li {
+    color: var(--cream);
+  }
+
+  .values .label {
+    font-size: 0.6875rem;
+    color: inherit;
+  }
+</style>
