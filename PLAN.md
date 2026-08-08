@@ -50,10 +50,10 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 4 — Polish
 
-- [ ] Responsive pass 360→1440px (test iPhone width first — traffic will come from Instagram)
-- [ ] Accessibility: landmarks, alt text, heading order, contrast per BRAND §2 rules only, keyboard walk-through, reduced-motion respected
-- [ ] SEO: unique title + meta description per page, OG/Twitter tags, sitemap, `robots.txt`
-- [ ] Lighthouse ≥ 95 in all four categories against `npm run preview`; record scores in the phase commit message
+- [x] Responsive pass 360→1440px (test iPhone width first — traffic will come from Instagram)
+- [x] Accessibility: landmarks, alt text, heading order, contrast per BRAND §2 rules only, keyboard walk-through, reduced-motion respected
+- [x] SEO: unique title + meta description per page, OG/Twitter tags, sitemap, `robots.txt`
+- [x] Lighthouse ≥ 95 in all four categories against `npm run preview`; record scores in the phase commit message
 - **Acceptance:** the numbers above, verified, not assumed.
 
 ## Phase 5 — Deploy

@@ -44,11 +44,14 @@ const { name, confirmed, level, duration, icon, description } = Astro.props;
     color: var(--sage-deep);
   }
 
+  /* On sand, ink is the only approved reading color (BRAND §2) —
+     sage-deep on sand is 3.49:1 and fails AA at this size. */
   h3 {
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
     flex-wrap: wrap;
+    color: var(--ink);
   }
 
   h3 .todo {
