@@ -23,6 +23,7 @@ const year = new Date().getFullYear();
         <a href={href('/contact/')}>Get in touch</a> — beginners are always
         welcome to just ask questions.
       </p>
+      <p class="cert-line">{site.teacher} · {site.certification}</p>
     </div>
 
     <p class="credit">&copy; {year} {site.name}</p>
@@ -59,6 +60,11 @@ const year = new Date().getFullYear();
 
   .tagline {
     font-size: 1.625rem;
+  }
+
+  .cert-line {
+    margin-top: 0.75rem;
+    font-size: var(--text-small);
   }
 
   .credit {

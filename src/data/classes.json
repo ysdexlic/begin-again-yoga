@@ -1,26 +1,26 @@
 [
   {
-    "name": "Slow Flow",
-    "confirmed": false,
+    "name": "Vinyasa Flow",
+    "confirmed": true,
     "level": "TODO: level",
     "duration": "TODO: length",
     "icon": "path",
-    "description": "Unhurried movement linked to breath, one shape at a time. Space to arrive, soften, and find your own pace."
+    "description": "Movement linked to breath, one shape at a time. Space to arrive, soften and find your own pace."
   },
   {
-    "name": "Restorative",
-    "confirmed": false,
+    "name": "Pranayama",
+    "confirmed": true,
     "level": "TODO: level",
     "duration": "TODO: length",
     "icon": "circle",
-    "description": "Supported rest with props and long, quiet holds. Less doing, more letting go."
+    "description": "The breath is our anchor. Space to slow down, settle the mind and reconnect with the present moment."
   },
   {
-    "name": "Beginners' Course",
-    "confirmed": false,
+    "name": "Meditation",
+    "confirmed": true,
     "level": "TODO: level",
     "duration": "TODO: length",
-    "icon": "sprout",
-    "description": "The basics, built gently from the ground up. Nothing to prove — just a place to begin."
+    "icon": "heart",
+    "description": "A moment to simply be, to pause and turn our attention inwards."
   }
 ]
