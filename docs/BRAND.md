@@ -65,7 +65,10 @@ only large display text or decoration.
 ## 3. Typography
 
 Google Fonts, self-hosted via `@fontsource` (no external requests). Latin subset,
-`font-display: swap`.
+`font-display: swap`. To keep the swap invisible, above-the-fold faces are
+preloaded in `Base.astro` and each family has a metric-matched local fallback
+(`size-adjust` overrides in `global.css`) so text doesn't move when the
+webfont lands.
 
 | Role | Font | Usage |
 |---|---|---|

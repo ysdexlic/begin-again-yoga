@@ -18,10 +18,11 @@
   --taupe: #a2a491;
   --ink: #414a33;
 
-  /* Type families (BRAND §3) */
-  --font-script: 'Allura', cursive;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Karla', system-ui, sans-serif;
+  /* Type families (BRAND §3) — each webfont is backed by a metric-matched
+     local fallback (below) so font-display: swap can't shift layout */
+  --font-script: 'Allura', 'Allura Fallback', cursive;
+  --font-display: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  --font-body: 'Karla', 'Karla Fallback', system-ui, sans-serif;
 
   /* Fluid type scale — 360px → 1440px viewports */
   --text-h1: clamp(2.4rem, 1.95rem + 2vw, 3.75rem);
@@ -40,6 +41,40 @@
 
   /* Focus ring — dark bands override via .band-dark */
   --focus-color: var(--terracotta-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Font-loading fallbacks
+   Local stand-ins sized to occupy exactly the space of each webfont, so text
+   set before the woff2 arrives doesn't move on swap. size-adjust is the
+   webfont/fallback width ratio measured over the site's rendered copy;
+   ascent/descent come from the webfonts' head/hhea tables, divided by it.
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Karla Fallback';
+  src: local('Arial');
+  size-adjust: 100.15%;
+  ascent-override: 91.56%;
+  descent-override: 25.16%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  src: local('Georgia');
+  size-adjust: 91.37%;
+  ascent-override: 101.13%;
+  descent-override: 31.41%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Allura Fallback';
+  src: local('Georgia');
+  size-adjust: 78.65%;
+  ascent-override: 101.72%;
+  descent-override: 57.22%;
+  line-gap-override: 0%;
 }
 
 /* --------------------------------------------------------------------------
