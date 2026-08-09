@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import logo from '../assets/brand/logo-transparent.png';
+import portrait from '../assets/brand/dita.jpg';
 import ValueStrip from '../components/ValueStrip.astro';
 import ClassCard from '../components/ClassCard.astro';
 import QuoteBand from '../components/QuoteBand.astro';
@@ -49,7 +50,10 @@ import classes from '../data/classes.json';
 
   <section class="intro">
     <div class="wrap intro-grid">
-      <PhotoPlaceholder label="Portrait — TODO" />
+      <PhotoPlaceholder
+        src={portrait}
+        alt="Ardita sitting cross-legged on a yoga mat, hands at heart centre, smiling in a bright, plant-filled studio"
+      />
       <div class="intro-text">
         <SectionLabel text="Welcome" />
         <h2>A small, unhurried practice</h2>
@@ -132,21 +136,22 @@ import classes from '../data/classes.json';
 
   .sub {
     font-size: 1.125rem;
+    margin-top: 0.75rem;
   }
 
   .cta {
     display: flex;
     align-items: center;
     gap: 1.75rem;
-    margin-top: 0.5rem;
+    margin-top: 1.25rem;
   }
 
   .strip {
-    padding-block: var(--space-section) calc(var(--space-section) / 2);
+    padding-block: calc(var(--space-section) / 2) calc(var(--space-section) / 4);
   }
 
   .intro {
-    padding-block: calc(var(--space-section) / 2);
+    padding-block: calc(var(--space-section) / 2) calc(var(--space-section) / 4);
   }
 
   .intro-grid {
@@ -157,7 +162,7 @@ import classes from '../data/classes.json';
   }
 
   .preview {
-    padding-block: var(--space-section);
+    padding-block: calc(var(--space-section) / 2) var(--space-section);
   }
 
   .center {

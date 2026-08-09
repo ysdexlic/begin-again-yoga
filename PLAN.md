@@ -73,7 +73,9 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
   real script font (Brittany Signature TTF, replacing Allura — BRAND §3 updated).
   Still TODO: weekly schedule, pricing, class levels/durations, map link,
   mats-provided confirm
-- [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5)
+- [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5) —
+  partial 2026-08-09: homepage portrait in (`src/assets/brand/dita.jpg`, studio
+  shot, rendered through the blob frame). About-page photos still TODO
 - [ ] Optional: contact form via Formspree; booking embed
 - [x] Custom domain (TECH.md §Custom domain): `beginagainyoga.co.uk` — Cloudflare DNS (grey-cloud A/CNAME records), Pages cname set via API, HTTPS enforced
 
