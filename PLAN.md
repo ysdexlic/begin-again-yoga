@@ -68,8 +68,11 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 - [ ] Replace `[LOCATION]`/TODO placeholders from Ardita's answers — partial
   2026-08-09: her story (About, verbatim), name as **Ardita Biru Langit**, real
   classes (Vinyasa Flow / Pranayama / Meditation) and the Yoga Alliance 200hr YTT
-  cert (About + footer) are in. Still TODO: location, weekly schedule, pricing,
-  class levels/durations, email/Instagram, mats-provided confirm
+  cert (About + footer) are in. Also in (later 2026-08-09): location **London**,
+  email **hello@beginagainyoga.co.uk**, Instagram **@arditabiru**, and the owner's
+  real script font (Brittany Signature TTF, replacing Allura — BRAND §3 updated).
+  Still TODO: weekly schedule, pricing, class levels/durations, map link,
+  mats-provided confirm
 - [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5)
 - [ ] Optional: contact form via Formspree; booking embed
 - [x] Custom domain (TECH.md §Custom domain): `beginagainyoga.co.uk` — Cloudflare DNS (grey-cloud A/CNAME records), Pages cname set via API, HTTPS enforced

@@ -20,7 +20,7 @@
 
   /* Type families (BRAND §3) — each webfont is backed by a metric-matched
      local fallback (below) so font-display: swap can't shift layout */
-  --font-script: 'Allura', 'Allura Fallback', cursive;
+  --font-script: 'Brittany Signature', 'Brittany Signature Fallback', cursive;
   --font-display: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
   --font-body: 'Karla', 'Karla Fallback', system-ui, sans-serif;
 
@@ -68,12 +68,22 @@
   line-gap-override: 0%;
 }
 
+/* The owner's script font (supersedes Allura — BRAND §3). Served from this
+   directory so Vite hashes it alongside the fontsource woff2s. */
 @font-face {
-  font-family: 'Allura Fallback';
+  font-family: 'Brittany Signature';
+  src: url('./BrittanySignature.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brittany Signature Fallback';
   src: local('Georgia');
-  size-adjust: 78.65%;
-  ascent-override: 101.72%;
-  descent-override: 57.22%;
+  size-adjust: 83.8%;
+  ascent-override: 113.36%;
+  descent-override: 47.73%;
   line-gap-override: 0%;
 }
 
@@ -94,6 +104,8 @@ html {
   color-scheme: light;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Keep anchor targets clear of the sticky header (~4rem tall) */
+  scroll-padding-top: 4.5rem;
 }
 
 body {
@@ -178,7 +190,7 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-/* Script accent (Allura): display moments only — never body copy,
+/* Script accent (Brittany Signature): display moments only — never body copy,
    never below 24px, never all-caps. Size in context, ≥ the 1.5rem floor. */
 .script {
   font-family: var(--font-script);
