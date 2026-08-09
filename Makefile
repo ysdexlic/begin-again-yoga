@@ -1,7 +1,5 @@
 # Begin Again Yoga — `make` runs the dev server.
-
-# Astro 5 needs a recent Node; pin the asdf version used for builds.
-export ASDF_NODEJS_VERSION := 22.15.0
+# Node version comes from .tool-versions (asdf).
 
 .DEFAULT_GOAL := dev
 
