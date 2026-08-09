@@ -19,7 +19,13 @@ const { label = 'Photo — TODO', src, alt = '' } = Astro.props;
 <figure class:list={['blob-frame', { 'has-photo': !!src }]}>
   {
     src ? (
-      <Image class="photo" src={src} alt={alt} width={400} densities={[1, 2]} />
+      <Image
+        class="photo"
+        src={src}
+        alt={alt}
+        widths={[640, 960, 1280, 1536]}
+        sizes="(max-width: 47.99rem) 480px, 420px"
+      />
     ) : (
       <>
         <svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
@@ -62,7 +68,8 @@ const { label = 'Photo — TODO', src, alt = '' } = Astro.props;
     display: block;
     width: 100%;
     height: auto;
-    transform: scale(1.25);
+    /* Zoomed crop; sizes above is inflated to match so enough pixels load */
+    transform: scale(1.5);
     transform-origin: 50% 88%;
   }
 
