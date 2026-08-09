@@ -1,24 +1,35 @@
 ---
 /**
  * Watercolor-blob photo frame (BRAND §5: organic blobs, never hard
- * rectangles). Renders an obvious placeholder until Phase 6 swaps in real
- * photography via astro:assets.
+ * rectangles). Given a `src`, renders the photo via astro:assets with the
+ * blob peeking out behind it; without one, stays an obvious placeholder.
  */
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 interface Props {
   label?: string;
+  src?: ImageMetadata;
+  alt?: string;
 }
 
-const { label = 'Photo — TODO' } = Astro.props;
+const { label = 'Photo — TODO', src, alt = '' } = Astro.props;
 ---
 
-<figure class="blob-frame">
+<figure class:list={['blob-frame', { 'has-photo': !!src }]}>
   <svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
     <path
       class="blob"
       d="M100 12c30 0 62 10 76 34 14 25 8 58-6 82s-38 42-68 42-58-16-74-42S10 66 26 42 70 12 100 12Z"
     ></path>
   </svg>
-  <figcaption><span class="todo">{label}</span></figcaption>
+  {
+    src ? (
+      <Image class="photo" src={src} alt={alt} width={320} densities={[1, 2]} />
+    ) : (
+      <figcaption><span class="todo">{label}</span></figcaption>
+    )
+  }
 </figure>
 
 <style>
@@ -30,12 +41,25 @@ const { label = 'Photo — TODO' } = Astro.props;
   }
 
   .blob-frame svg {
+    grid-area: 1 / 1;
     width: 100%;
     height: auto;
   }
 
   .blob {
     fill: var(--sand);
+  }
+
+  .has-photo svg {
+    transform: rotate(-8deg);
+  }
+
+  .photo {
+    grid-area: 1 / 1;
+    z-index: 1;
+    width: 86%;
+    height: auto;
+    border-radius: 54% 46% 58% 42% / 48% 55% 45% 52%;
   }
 
   figcaption {
