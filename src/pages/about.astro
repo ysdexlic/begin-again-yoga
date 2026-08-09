@@ -6,6 +6,7 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 import HillDivider from '../components/HillDivider.astro';
 import { href } from '../lib/href';
+import site from '../data/site.json';
 
 const philosophy = [
   {
@@ -28,7 +29,7 @@ const philosophy = [
 
 <Base
   title="About · Begin Again Yoga"
-  description="The story and philosophy behind Begin Again Yoga — starting over without judgment, one breath at a time."
+  description="Ardita Biru Langit's story behind Begin Again Yoga — starting over without judgment, one breath at a time. Yoga Alliance Certified, 200hr YTT."
 >
   <section class="wrap head">
     <SectionLabel text="About" />
@@ -38,12 +39,55 @@ const philosophy = [
   <section class="wrap story">
     <div class="story-text">
       <h2>Why &ldquo;begin again&rdquo;</h2>
-      <p>
-        <span class="todo">
-          TODO: Ardita's own words, ~150 words — her story, and what returning
-          to the mat means to her.
-        </span>
-      </p>
+      <!-- Ardita's own words — edit only with her. -->
+      <div class="prose">
+        <p>My journey to yoga was not a straight line.</p>
+        <p>
+          There was a point in my life when I realised I needed to choose
+          myself. I walked away from a marriage that was no longer healthy for
+          me, I left my stable job and started a new chapter in a new city.
+        </p>
+        <p>
+          It was scary. I didn't know exactly what my future would look like,
+          and for a while, I didn't know who I was becoming either.
+        </p>
+        <p>But I had my mat.</p>
+        <p>I kept coming back to it.</p>
+        <p>
+          Sometimes I came to the mat feeling strong. Sometimes I came feeling
+          lost, tired, or uncertain. But every time I stepped onto it, I had a
+          moment to breathe, to slow down, and to listen to myself.
+        </p>
+        <p>
+          I began to realise that yoga wasn't asking me to be perfect. It was
+          simply teaching me to meet myself where I was.
+        </p>
+        <p>And slowly, I started to feel like myself again.</p>
+        <p class="pull">
+          For me, returning to the mat means returning to myself.
+        </p>
+        <p>
+          It is a reminder that life doesn't have to look the way we once
+          imagined. That starting over is not failure. That we are allowed to
+          change direction, to let go, and to begin again.
+        </p>
+        <p>This is why I created Begin Again Yoga.</p>
+        <p>
+          A space for movement, breath, and connection. A space where you
+          don't have to be flexible, strong, or experienced. You simply have
+          to show up as you are.
+        </p>
+        <p>
+          Because sometimes, the bravest thing we can do is take one small
+          step forward.
+        </p>
+        <p>And sometimes, that step begins on the mat.</p>
+        <p>
+          Welcome to Begin Again Yoga.<br />
+          A place to pause, reconnect, and begin again.
+        </p>
+        <p class="byline">&mdash; {site.teacher}</p>
+      </div>
     </div>
     <PhotoPlaceholder label="Photo — TODO" />
   </section>
@@ -66,12 +110,13 @@ const philosophy = [
   </section>
 
   <section class="wrap trainings">
-    <h2>Trainings &amp; background</h2>
-    <p>
-      <span class="todo">
-        TODO: certifications (e.g. 200hr YTT), teachers, style.
-      </span>
-    </p>
+    <div class="trainings-text">
+      <h2>Trainings &amp; background</h2>
+      <p class="cert">
+        <span class="cert-icon"><Icon name="sprout" size={22} /></span>
+        <span>{site.certification}</span>
+      </p>
+    </div>
     <PhotoPlaceholder label="Photo — TODO" />
   </section>
 
@@ -94,7 +139,7 @@ const philosophy = [
   .story {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
-    align-items: center;
+    align-items: start;
     gap: clamp(2rem, 5vw, 4rem);
     padding-block: calc(var(--space-section) / 1.5);
   }
@@ -102,6 +147,47 @@ const philosophy = [
   .story p,
   .trainings p {
     max-width: 55ch;
+  }
+
+  .prose {
+    display: grid;
+    gap: 1em;
+    margin-top: 1.25rem;
+  }
+
+  /* Her one-line refrain, set apart — sage-deep on cream is AA (BRAND §2) */
+  .pull {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-h3);
+    line-height: 1.35;
+    color: var(--sage-deep);
+    padding-block: 0.375rem;
+  }
+
+  .byline {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--sage-deep);
+  }
+
+  /* On sand, ink is the only approved reading color (BRAND §2) */
+  .cert {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 1.25rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--sand);
+    border-radius: var(--radius-card);
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .cert-icon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--sage-deep);
   }
 
   .philosophy {
@@ -164,6 +250,11 @@ const philosophy = [
     .trainings {
       justify-items: center;
       text-align: center;
+    }
+
+    /* Long-form reading stays left-aligned on small screens */
+    .story .prose {
+      text-align: left;
     }
   }
 </style>

@@ -45,9 +45,9 @@ Pricing lives on the Classes page for v1; split into its own page only if it gro
 ## Classes & Schedule
 
 - **Class types** — cards from `classes.json`: name, level, duration, 2-sentence
-  description, brand icon. Seed with three honest placeholders:
-  "Slow Flow `TODO: confirm`", "Restorative `TODO: confirm`",
-  "Beginners' Course `TODO: confirm`".
+  description, brand icon. ~~Seed with three honest placeholders~~ superseded
+  2026-08-09: real classes confirmed by Ardita — Vinyasa Flow, Pranayama,
+  Meditation (her descriptions; levels/durations still TODO).
 - **Weekly schedule** — table from `schedule.json` (day, time, class, location).
   Seed rows rendered as `TODO — schedule coming soon` until Phase 6; the table
   states plainly that the timetable is being finalized.
@@ -73,12 +73,18 @@ line "Take a breath and begin again at home." → button to /.
 
 ## Open questions for Ardita  *(answers unblock Phase 6)*
 
-- [ ] How her name should appear on the site (Ardita? full name?) + short bio + 2–3 photos
+- [x] How her name should appear on the site (Ardita? full name?) + short bio + 2–3 photos
+  — answered 2026-08-09: full name, **Ardita Biru Langit**; her story is on /about/
+  verbatim. Photos still to come.
 - [ ] Location: studio address / online / in-home visits?
-- [ ] Class types with names, levels, durations, descriptions
+- [ ] Class types with names, levels, durations, descriptions — partial 2026-08-09:
+  names + descriptions in `classes.json` (Vinyasa Flow, Pranayama, Meditation);
+  levels and durations still TODO
 - [ ] Weekly schedule
 - [ ] Prices: drop-in, pass, private — and how people pay
 - [ ] Contact email for the site + Instagram handle
-- [ ] Certifications / insurance line for the footer?
+- [x] Certifications / insurance line for the footer? — answered 2026-08-09:
+  "Yoga Alliance Certified 200hr YTT Vinyasa flow UK & US" (in footer + About;
+  insurance line still unanswered)
 - [ ] Booking preference: keep "message me" or embed a tool (Calendly/Momence) later?
 - [ ] Custom domain (e.g. beginagainyoga.com)? Buy it early if yes — see TECH.md
