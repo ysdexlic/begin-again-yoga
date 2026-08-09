@@ -1,5 +1,4 @@
 ---
-import '@fontsource/allura/latin-400.css';
 import '@fontsource/cormorant-garamond/latin-500.css';
 import '@fontsource/cormorant-garamond/latin-600.css';
 import '@fontsource/karla/latin-400.css';
@@ -7,8 +6,8 @@ import '@fontsource/karla/latin-500.css';
 import '@fontsource/karla/latin-700.css';
 import '../styles/global.css';
 // Above-the-fold faces, preloaded so they arrive before first paint (the
-// ?url imports resolve to the same hashed assets the fontsource CSS points at).
-import alluraWoff2 from '@fontsource/allura/files/allura-latin-400-normal.woff2?url';
+// ?url imports resolve to the same hashed assets the CSS points at).
+import brittanyTtf from '../styles/BrittanySignature.ttf?url';
 import cormorant500Woff2 from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2?url';
 import cormorant600Woff2 from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2?url';
 import karla400Woff2 from '@fontsource/karla/files/karla-latin-400-normal.woff2?url';
@@ -34,7 +33,7 @@ const ogImage = new URL(href('/og.png'), Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preload" as="font" type="font/woff2" href={alluraWoff2} crossorigin />
+    <link rel="preload" as="font" type="font/ttf" href={brittanyTtf} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={cormorant500Woff2} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={cormorant600Woff2} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={karla400Woff2} crossorigin />

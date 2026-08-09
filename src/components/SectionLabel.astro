@@ -16,6 +16,9 @@ const { text } = Astro.props;
 
 <style>
   .eyebrow {
+    /* Not prose — opt out of the global p measure cap so the box spans its
+       container and the parent's text-align governs (center heads center). */
+    max-width: none;
     margin-bottom: 0.875rem;
   }
 </style>

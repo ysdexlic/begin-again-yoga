@@ -72,7 +72,7 @@ webfont lands.
 
 | Role | Font | Usage |
 |---|---|---|
-| Script accent | **Allura** 400 (alt: Sacramento) | "Begin Again"-style moments: hero headline, pull quotes, section eyebrows. Never body copy, never below 24px, never all-caps. |
+| Script accent | **Brittany Signature** 400 (owner-provided TTF in `src/styles/`; superseded Allura) | "Begin Again"-style moments: hero headline, pull quotes, section eyebrows. Never body copy, never below 24px, never all-caps. |
 | Headings + tracked labels | **Cormorant Garamond** 500/600 | H1–H3. Small labels uppercase with `letter-spacing: 0.28em` (the `— YOGA —` / `NEW BEGINNING` treatment). |
 | Body & UI | **Karla** 400/500/700 | Paragraphs, nav, buttons, tables, forms. |
 
