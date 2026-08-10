@@ -1,5 +1,4 @@
 ---
-import { href } from '../lib/href';
 import ValueStrip from './ValueStrip.astro';
 import site from '../data/site.json';
 
@@ -15,14 +14,10 @@ const year = new Date().getFullYear();
     <div class="contact">
       <p class="script tagline">{site.tagline}</p>
       <ul role="list">
-        <li>Email: {site.email}</li>
-        <li>Instagram: {site.instagram}</li>
+        <li>Email: <a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li>Instagram: <a href={site.instagramUrl}>{site.instagram}</a></li>
         <li>Location: {site.location}</li>
       </ul>
-      <p>
-        <a href={href('/contact/')}>Get in touch</a> — beginners are always
-        welcome to just ask questions.
-      </p>
       <p class="cert-line">{site.teacher} · {site.certification}</p>
     </div>
 
@@ -60,6 +55,7 @@ const year = new Date().getFullYear();
 
   .tagline {
     font-size: 1.625rem;
+    margin-bottom: 1rem;
   }
 
   .cert-line {
