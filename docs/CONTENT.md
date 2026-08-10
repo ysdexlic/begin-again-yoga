@@ -26,7 +26,7 @@ Pricing lives on the Classes page for v1; split into its own page only if it gro
    subline "Small-group yoga in [LOCATION], for every body and every level.";
    primary button "See classes" → /classes/; text link "Get in touch" → /contact/.
 2. **Value strip** — the five brand icons with tracked labels (NEW BEGINNING · A NEW
-   PATH · GROWTH · SELF LOVE · PAUSE. BREATHE. RESET.), as on the brand board.
+   PATH · GROWTH · SELF LOVE · BREATHE), icons as on the brand board.
 3. **Intro** — short welcome from Ardita (2–3 sentences, first person), portrait
    placeholder in a watercolor-blob frame, link to About.
 4. **Classes preview** — three class cards from `classes.json`, link to full page.
