@@ -14,17 +14,17 @@ const philosophy = [
   {
     icon: 'sprout',
     title: 'Growth',
-    text: 'Small steps, taken kindly, add up. Progress here is quieter than a headstand — it sounds like breathing a little easier.',
+    text: 'There is no rush, growth takes time and every step counts.',
   },
   {
     icon: 'heart',
     title: 'Self Love',
-    text: "You practice with the body you have today. Nothing to fix, nothing to prove — you're met exactly where you are.",
+    text: "You practice with the body you have today. Nothing to fix, nothing to prove. You're met exactly where you are.",
   },
   {
     icon: 'circle',
     title: 'Breathe',
-    text: 'An hour that belongs to you. Put the week down at the door; it will keep.',
+    text: 'Time that belongs to you. Put the week down at the door and just be.',
   },
 ] as const;
 ---
@@ -119,10 +119,7 @@ const philosophy = [
   <section class="wrap trainings">
     <div class="trainings-text">
       <h2>Trainings &amp; background</h2>
-      <p class="cert">
-        <span class="cert-icon"><Icon name="sprout" size={22} /></span>
-        <span>{site.certification}</span>
-      </p>
+      <p class="cert">{site.certification}</p>
     </div>
     <PhotoPlaceholder
       src={certificate}
@@ -186,21 +183,13 @@ const philosophy = [
 
   /* On sand, ink is the only approved reading color (BRAND §2) */
   .cert {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
+    display: inline-block;
     margin-top: 1.25rem;
     padding: 0.875rem 1.25rem;
     background: var(--sand);
     border-radius: var(--radius-card);
     font-weight: 500;
     color: var(--ink);
-  }
-
-  .cert-icon {
-    display: flex;
-    flex-shrink: 0;
-    color: var(--sage-deep);
   }
 
   .philosophy {
