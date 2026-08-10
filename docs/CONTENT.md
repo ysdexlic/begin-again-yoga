@@ -13,10 +13,11 @@ The owner should be able to edit a class time without touching markup.
 ## Sitemap
 
 ```
-Home (/) · About (/about/) · Classes & Schedule (/classes/) · Contact (/contact/) · 404
+Home (/) · About (/about/) · Classes (/classes/) · Contact (/contact/) · 404
 ```
 
-Pricing lives on the Classes page for v1; split into its own page only if it grows.
+~~Pricing lives on the Classes page for v1~~ dropped 2026-08-10: schedule, pricing
+and class levels/durations are off the site until the owner confirms real details.
 
 ---
 
@@ -31,8 +32,8 @@ Pricing lives on the Classes page for v1; split into its own page only if it gro
    placeholder in a watercolor-blob frame, link to About.
 4. **Classes preview** — three class cards from `classes.json`, link to full page.
 5. **Quote band** — sage-deep background, script pull-quote "Pause. Breathe. Reset."
-6. **Practical strip** — where ([LOCATION] + map link TODO), when (schedule teaser),
-   contact CTA.
+6. **Practical strip** — where ([LOCATION]), contact CTA (map-link TODO and the
+   "when" schedule teaser dropped 2026-08-10).
 
 ## About
 
@@ -42,20 +43,15 @@ Pricing lives on the Classes page for v1; split into its own page only if it gro
 - Trainings & background: `TODO: certifications (e.g. 200hr YTT), teachers, style.`
 - 1–2 photo placeholders; closing CTA to Classes.
 
-## Classes & Schedule
+## Classes
 
-- **Class types** — cards from `classes.json`: name, level, duration, 2-sentence
-  description, brand icon. ~~Seed with three honest placeholders~~ superseded
-  2026-08-09: real classes confirmed by Ardita — Vinyasa Flow, Pranayama,
-  Meditation (her descriptions; levels/durations still TODO).
-- **Weekly schedule** — table from `schedule.json` (day, time, class, location).
-  Seed rows rendered as `TODO — schedule coming soon` until Phase 6; the table
-  states plainly that the timetable is being finalized.
-- **Pricing** — cards from `pricing.json`: Drop-in / Class pass / Private 1-to-1,
-  all prices `TODO`.
-- **Your first time?** — short plain list (arrive 10 min early, mats provided TODO:
-  confirm, wear anything comfortable, nothing to prove).
-- Booking note: "Message to reserve a spot" → contact page (no booking system in v1).
+- **Class types** — cards from `classes.json`: name, 2-sentence description, brand
+  icon. ~~Seed with three honest placeholders~~ superseded 2026-08-09: real classes
+  confirmed by Ardita — Vinyasa Flow, Pranayama, Meditation (her descriptions;
+  levels/durations dropped 2026-08-10).
+- ~~Weekly schedule · Pricing · Your first time? · booking note~~ removed
+  2026-08-10 — the page is just the class cards until a real schedule and prices
+  exist.
 
 ## Contact
 
@@ -79,9 +75,11 @@ line "Take a breath and begin again at home." → button to /.
 - [ ] Location: studio address / online / in-home visits?
 - [ ] Class types with names, levels, durations, descriptions — partial 2026-08-09:
   names + descriptions in `classes.json` (Vinyasa Flow, Pranayama, Meditation);
-  levels and durations still TODO
-- [ ] Weekly schedule
-- [ ] Prices: drop-in, pass, private — and how people pay
+  levels and durations dropped from the site 2026-08-10, re-add when confirmed
+- [ ] Weekly schedule — section removed from the site 2026-08-10; re-add once real
+  times exist
+- [ ] Prices: drop-in, pass, private — and how people pay (pricing section removed
+  from the site 2026-08-10; re-add once real prices exist)
 - [ ] Contact email for the site + Instagram handle
 - [x] Certifications / insurance line for the footer? — answered 2026-08-09:
   "Yoga Alliance Certified 200hr YTT Vinyasa flow UK & US" (in footer + About;

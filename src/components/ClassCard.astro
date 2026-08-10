@@ -9,13 +9,11 @@ import type { IconName } from './Icon.astro';
 interface Props {
   name: string;
   confirmed: boolean;
-  level: string;
-  duration: string;
   icon: string;
   description: string;
 }
 
-const { name, confirmed, level, duration, icon, description } = Astro.props;
+const { name, confirmed, icon, description } = Astro.props;
 ---
 
 <article class="card">
@@ -24,9 +22,6 @@ const { name, confirmed, level, duration, icon, description } = Astro.props;
     {name}
     {!confirmed && <span class="todo">TODO: confirm</span>}
   </h3>
-  <p class="meta">
-    <span class="todo">{level}</span> · <span class="todo">{duration}</span>
-  </p>
   <p class="desc">{description}</p>
 </article>
 
@@ -58,10 +53,6 @@ const { name, confirmed, level, duration, icon, description } = Astro.props;
     font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: normal;
-  }
-
-  .meta {
-    font-size: var(--text-small);
   }
 
   .desc {

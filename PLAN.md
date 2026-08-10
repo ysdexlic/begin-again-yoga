@@ -71,8 +71,9 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
   cert (About + footer) are in. Also in (later 2026-08-09): location **London**,
   email **hello@beginagainyoga.co.uk**, Instagram **@arditabiru**, and the owner's
   real script font (Brittany Signature TTF, replacing Allura — BRAND §3 updated).
-  Still TODO: weekly schedule, pricing, class levels/durations, map link,
-  mats-provided confirm
+  ~~Still TODO: weekly schedule, pricing, class levels/durations, map link,
+  mats-provided confirm~~ 2026-08-10: these placeholder sections were removed
+  from the site at the owner's request — re-add if real details arrive
 - [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5) —
   partial 2026-08-09: homepage portrait in (`src/assets/brand/dita.jpg`, studio
   shot, rendered through the blob frame). About-page photos still TODO
