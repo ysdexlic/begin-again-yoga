@@ -11,9 +11,10 @@ interface Props {
     label?: string;
     src?: ImageMetadata;
     alt?: string;
-    /** Per-photo crop tuning; defaults match the homepage portrait. */
+    /** Per-photo crop and blob-shape tuning; defaults match the homepage portrait. */
     zoom?: number;
     origin?: string;
+    radius?: string;
 }
 
 const {
@@ -22,12 +23,15 @@ const {
     alt = "",
     zoom = 1.8,
     origin = "50% 88%",
+    radius = "54% 46% 58% 42% / 48% 55% 35% 52%",
 } = Astro.props;
 ---
 
 <figure
     class:list={["blob-frame", { "has-photo": !!src }]}
-    style={src ? `--photo-zoom: ${zoom}; --photo-origin: ${origin};` : undefined}
+    style={src
+        ? `--photo-zoom: ${zoom}; --photo-origin: ${origin}; --photo-radius: ${radius};`
+        : undefined}
 >
     {
         src ? (
@@ -78,7 +82,7 @@ const {
 
     .has-photo {
         overflow: hidden;
-        border-radius: 54% 46% 58% 42% / 48% 55% 35% 52%;
+        border-radius: var(--photo-radius, 54% 46% 58% 42% / 48% 55% 35% 52%);
         /* Keeps Safari clipping the scaled photo to the rounded frame */
         isolation: isolate;
     }

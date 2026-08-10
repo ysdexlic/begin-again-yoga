@@ -69,7 +69,8 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
   2026-08-09: her story (About, verbatim), name as **Ardita Biru Langit**, real
   classes (Vinyasa Flow / Pranayama / Meditation) and the Yoga Alliance 200hr YTT
   cert (About + footer) are in. Also in (later 2026-08-09): location **London**,
-  email **hello@beginagainyoga.co.uk**, Instagram **@arditabiru**, and the owner's
+  email **hello@beginagainyoga.co.uk**, Instagram **@arditabiru** (changed to
+  **@begin_againyoga** on 2026-08-10), and the owner's
   real script font (Brittany Signature TTF, replacing Allura — BRAND §3 updated).
   ~~Still TODO: weekly schedule, pricing, class levels/durations, map link,
   mats-provided confirm~~ 2026-08-10: these placeholder sections were removed
