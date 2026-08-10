@@ -43,7 +43,8 @@ and class levels/durations are off the site until the owner confirms real detail
   `TODO: Ardita's own words, ~150 words.`
 - Philosophy: 3 short blocks keyed to brand icons (e.g. Growth / Self Love / Pause).
 - Trainings & background: `TODO: certifications (e.g. 200hr YTT), teachers, style.`
-- 1–2 photo placeholders; closing CTA to Contact.
+- Photos (in 2026-08-10): studio backbend beside her story, YTT-certificate shot
+  beside Trainings; closing CTA to Contact.
 
 ## Classes
 

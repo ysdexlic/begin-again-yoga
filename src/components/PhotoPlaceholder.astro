@@ -11,12 +11,24 @@ interface Props {
     label?: string;
     src?: ImageMetadata;
     alt?: string;
+    /** Per-photo crop tuning; defaults match the homepage portrait. */
+    zoom?: number;
+    origin?: string;
 }
 
-const { label = "Photo — TODO", src, alt = "" } = Astro.props;
+const {
+    label = "Photo — TODO",
+    src,
+    alt = "",
+    zoom = 1.8,
+    origin = "50% 88%",
+} = Astro.props;
 ---
 
-<figure class:list={["blob-frame", { "has-photo": !!src }]}>
+<figure
+    class:list={["blob-frame", { "has-photo": !!src }]}
+    style={src ? `--photo-zoom: ${zoom}; --photo-origin: ${origin};` : undefined}
+>
     {
         src ? (
             <Image
@@ -76,8 +88,8 @@ const { label = "Photo — TODO", src, alt = "" } = Astro.props;
         width: 100%;
         height: auto;
         /* Zoomed crop; sizes above is inflated to match so enough pixels load */
-        transform: scale(1.8);
-        transform-origin: 50% 88%;
+        transform: scale(var(--photo-zoom, 1.8));
+        transform-origin: var(--photo-origin, 50% 88%);
     }
 
     figcaption {

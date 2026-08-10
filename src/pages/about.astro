@@ -7,6 +7,8 @@ import Icon from '../components/Icon.astro';
 import HillDivider from '../components/HillDivider.astro';
 import { href } from '../lib/href';
 import site from '../data/site.json';
+import pose from '../assets/brand/yoga-pose.jpg';
+import certificate from '../assets/brand/yoga-certificate.jpg';
 
 const philosophy = [
   {
@@ -89,7 +91,10 @@ const philosophy = [
         <p class="byline">&mdash; {site.teacher}</p>
       </div>
     </div>
-    <PhotoPlaceholder label="Photo — TODO" />
+    <PhotoPlaceholder
+      src={pose}
+      alt="Ardita kneeling on her mat in a backbend, chest lifted toward the skylight, in a bright, plant-filled studio"
+    />
   </section>
 
   <HillDivider />
@@ -117,7 +122,12 @@ const philosophy = [
         <span>{site.certification}</span>
       </p>
     </div>
-    <PhotoPlaceholder label="Photo — TODO" />
+    <PhotoPlaceholder
+      src={certificate}
+      alt="Ardita smiling in white, holding her 200hr vinyasa teacher-training certificate and a white rose"
+      zoom={1.2}
+      origin="50% 45%"
+    />
   </section>
 
   <section class="wrap closing">
