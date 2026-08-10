@@ -36,8 +36,7 @@ import classes from '../data/classes.json';
         every body and every level.
       </p>
       <div class="cta">
-        <Button href={href('/classes/')}>See classes</Button>
-        <a href={href('/contact/')}>Get in touch</a>
+        <Button href={href('/contact/')}>Get in touch</Button>
       </div>
     </div>
   </section>
@@ -74,7 +73,6 @@ import classes from '../data/classes.json';
       <div class="cards">
         {classes.map((c) => <ClassCard {...c} />)}
       </div>
-      <p><a href={href('/classes/')}>More about each class</a></p>
     </div>
   </section>
 

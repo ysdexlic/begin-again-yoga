@@ -43,7 +43,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 - [x] Data files per TECH.md: `site.json`, `classes.json`, `schedule.json`, `pricing.json` — placeholder content exactly as marked in CONTENT.md
 - [x] Home — hero, icon value strip, intro, class-card preview, sage quote band, practical section (CONTENT §Home)
 - [x] About — story, philosophy, trainings placeholder, photo placeholders (CONTENT §About)
-- [x] Classes & Schedule — class cards, weekly schedule table, pricing cards, first-timer FAQ (CONTENT §Classes)
+- [x] Classes & Schedule — class cards, weekly schedule table, pricing cards, first-timer FAQ (CONTENT §Classes) — page removed 2026-08-10; the cards live on the homepage
 - [x] Contact — email CTA, Instagram, location; no form in v1 (CONTENT §Contact)
 - [x] 404 — on-brand (CONTENT §404)
 - **Acceptance:** every section listed in CONTENT.md exists; no dead links; internal links respect the base path; placeholders clearly marked, none invented.

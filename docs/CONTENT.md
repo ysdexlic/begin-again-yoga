@@ -13,7 +13,7 @@ The owner should be able to edit a class time without touching markup.
 ## Sitemap
 
 ```
-Home (/) · About (/about/) · Classes (/classes/) · Contact (/contact/) · 404
+Home (/) · About (/about/) · Contact (/contact/) · 404
 ```
 
 ~~Pricing lives on the Classes page for v1~~ dropped 2026-08-10: schedule, pricing
@@ -25,12 +25,14 @@ and class levels/durations are off the site until the owner confirms real detail
 
 1. **Hero** — logo lockup; script headline "Every day is a chance to begin again.";
    subline "Small-group yoga in [LOCATION], for every body and every level.";
-   primary button "See classes" → /classes/; text link "Get in touch" → /contact/.
+   primary button "Get in touch" → /contact/ (was "See classes"; classes page
+   removed 2026-08-10).
 2. **Value strip** — the five brand icons with tracked labels (NEW BEGINNING · A NEW
    PATH · GROWTH · SELF LOVE · BREATHE), icons as on the brand board.
 3. **Intro** — short welcome from Ardita (2–3 sentences, first person), portrait
    placeholder in a watercolor-blob frame, link to About.
-4. **Classes preview** — three class cards from `classes.json`, link to full page.
+4. **Classes preview** — three class cards from `classes.json`, no link (the
+   classes page was removed 2026-08-10 — this section is where classes live now).
 5. **Quote band** — sage-deep background, script pull-quote "Pause. Breathe. Reset."
 6. **Practical strip** — where ([LOCATION]), contact CTA (map-link TODO and the
    "when" schedule teaser dropped 2026-08-10).
@@ -41,17 +43,14 @@ and class levels/durations are off the site until the owner confirms real detail
   `TODO: Ardita's own words, ~150 words.`
 - Philosophy: 3 short blocks keyed to brand icons (e.g. Growth / Self Love / Pause).
 - Trainings & background: `TODO: certifications (e.g. 200hr YTT), teachers, style.`
-- 1–2 photo placeholders; closing CTA to Classes.
+- 1–2 photo placeholders; closing CTA to Contact.
 
 ## Classes
 
-- **Class types** — cards from `classes.json`: name, 2-sentence description, brand
-  icon. ~~Seed with three honest placeholders~~ superseded 2026-08-09: real classes
-  confirmed by Ardita — Vinyasa Flow, Pranayama, Meditation (her descriptions;
-  levels/durations dropped 2026-08-10).
-- ~~Weekly schedule · Pricing · Your first time? · booking note~~ removed
-  2026-08-10 — the page is just the class cards until a real schedule and prices
-  exist.
+Page removed 2026-08-10 — the class cards (from `classes.json`: Vinyasa Flow,
+Pranayama, Meditation, with Ardita's descriptions) now live only in the homepage
+preview section. Schedule, pricing and "Your first time?" had already been dropped
+the same day; re-add a classes page if/when a real schedule and prices arrive.
 
 ## Contact
 
