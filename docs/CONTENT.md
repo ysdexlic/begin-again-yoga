@@ -24,7 +24,8 @@ and class levels/durations are off the site until the owner confirms real detail
 ## Home
 
 1. **Hero** — logo lockup; script headline "Every day is a chance to begin again.";
-   subline "Small-group yoga in [LOCATION], for every body and every level.";
+   subline "Group and personal yoga training in [LOCATION], for every body and
+   every level.";
    primary button "Get in touch" → /contact/ (was "See classes"; classes page
    removed 2026-08-10).
 2. **Value strip** — the five brand icons with tracked labels (NEW BEGINNING · A NEW
