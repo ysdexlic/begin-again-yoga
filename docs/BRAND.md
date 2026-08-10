@@ -94,7 +94,10 @@ viewbox), `--sage-deep`, rounded caps, no fills:
 | Hand-drawn open circle (ensō) | Pause. Breathe. Reset. (site caption shortened to "Breathe" 2026-08-10) |
 
 Use as section markers, footer strip (icon + tracked label, like the board), and
-list bullets. Supporting motifs: em-dashes flanking labels, the lotus glyph as a
+list bullets. The contact page instead uses three owner-supplied glyphs —
+outlined envelope, camera, map pin (`email` / `instagram` / `pin` in
+`Icon.astro`); they are fill-drawn rather than stroked but take the same
+`--sage-deep` via currentColor (2026-08-10). Supporting motifs: em-dashes flanking labels, the lotus glyph as a
 section divider, and layered rolling-hill SVG dividers (sand/sage at 30–50%
 opacity) between major sections.
 

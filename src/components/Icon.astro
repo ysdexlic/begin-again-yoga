@@ -1,12 +1,13 @@
 ---
 /**
  * The five brand icons (docs/BRAND.md §4) — thin strokes on a 24px grid,
- * rounded caps, no fills. Color inherits via currentColor (sage-deep in
- * normal flow, cream inside .band-dark).
+ * rounded caps, no fills — plus three contact glyphs (email / instagram /
+ * pin) from owner-supplied artwork, which is fill-drawn. Color inherits via
+ * currentColor either way (sage-deep in normal flow, cream inside .band-dark).
  *
  * Decorative by default; pass `title` when the icon carries meaning.
  */
-export type IconName = 'sunrise' | 'path' | 'sprout' | 'heart' | 'circle';
+export type IconName = 'sunrise' | 'path' | 'sprout' | 'heart' | 'circle' | 'email' | 'instagram' | 'pin';
 
 interface Props {
   name: IconName;
@@ -16,46 +17,110 @@ interface Props {
 
 const { name, size = 24, title } = Astro.props;
 
-const paths: Record<IconName, string[]> = {
+interface IconDef {
+  viewBox: string;
+  drawn: 'stroke' | 'fill';
+  paths: string[];
+}
+
+const icons: Record<IconName, IconDef> = {
   // Rising sun over a horizon line — New Beginning
-  sunrise: [
-    'M3.5 17.5h17',
-    'M7.5 17.5a4.5 4.5 0 0 1 9 0',
-    'M12 11.7V9.3',
-    'M16.1 13.4l1.7-1.7',
-    'M7.9 13.4l-1.7-1.7',
-    'M17.6 15.4l2.2-.8',
-    'M6.4 15.4l-2.2-.8',
-  ],
+  sunrise: {
+    viewBox: '0 0 24 24',
+    drawn: 'stroke',
+    paths: [
+      'M3.5 17.5h17',
+      'M7.5 17.5a4.5 4.5 0 0 1 9 0',
+      'M12 11.7V9.3',
+      'M16.1 13.4l1.7-1.7',
+      'M7.9 13.4l-1.7-1.7',
+      'M17.6 15.4l2.2-.8',
+      'M6.4 15.4l-2.2-.8',
+    ],
+  },
   // Winding S-curve path — A New Path
-  path: ['M7 21c7.5-3.5-2.5-9 4-12.5 4-2.2 5.4-3.3 6-5.5'],
+  path: {
+    viewBox: '0 0 24 24',
+    drawn: 'stroke',
+    paths: ['M7 21c7.5-3.5-2.5-9 4-12.5 4-2.2 5.4-3.3 6-5.5'],
+  },
   // Sprout with two leaves — Growth
-  sprout: [
-    'M12 20.5c0-6 0-8.5 0-9.5',
-    'M12 14.5C9.5 14.5 8 13 7.6 10.6c2.5 0 4.1 1.4 4.4 3.9Z',
-    'M12 11c0-3 1.8-4.8 4.6-5-.2 2.8-1.9 4.7-4.6 5Z',
-  ],
+  sprout: {
+    viewBox: '0 0 24 24',
+    drawn: 'stroke',
+    paths: [
+      'M12 20.5c0-6 0-8.5 0-9.5',
+      'M12 14.5C9.5 14.5 8 13 7.6 10.6c2.5 0 4.1 1.4 4.4 3.9Z',
+      'M12 11c0-3 1.8-4.8 4.6-5-.2 2.8-1.9 4.7-4.6 5Z',
+    ],
+  },
   // Open line heart — Self Love
-  heart: [
-    'M12 19c-2-1.8-6.2-5-6.2-8.6a3.4 3.4 0 0 1 6.2-2 3.4 3.4 0 0 1 6.2 2C18.2 14 14 17.2 12 19Z',
-  ],
+  heart: {
+    viewBox: '0 0 24 24',
+    drawn: 'stroke',
+    paths: [
+      'M12 19c-2-1.8-6.2-5-6.2-8.6a3.4 3.4 0 0 1 6.2-2 3.4 3.4 0 0 1 6.2 2C18.2 14 14 17.2 12 19Z',
+    ],
+  },
   // Hand-drawn open circle (ensō) — Pause. Breathe. Reset.
-  circle: ['M14.8 4.8A8.2 8.2 0 1 0 19.6 9.4'],
+  circle: {
+    viewBox: '0 0 24 24',
+    drawn: 'stroke',
+    paths: ['M14.8 4.8A8.2 8.2 0 1 0 19.6 9.4'],
+  },
+  // Outlined envelope — Email
+  email: {
+    viewBox: '0 0 24 24',
+    drawn: 'fill',
+    paths: [
+      'M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z',
+    ],
+  },
+  // Outlined camera — Instagram
+  instagram: {
+    viewBox: '0 0 32 32',
+    drawn: 'fill',
+    paths: [
+      'M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z',
+      'M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z',
+      'M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z',
+    ],
+  },
+  // Outlined map pin — Where. Artwork bleeds to the grid edge, so the viewBox
+  // is padded to keep it at the same optical size as its neighbours.
+  pin: {
+    viewBox: '-3 -3 30 30',
+    drawn: 'fill',
+    paths: [
+      'M11.3856 23.789C11.3856 23.789 11.3861 23.7894 12 23L12.6139 23.7894C12.2528 24.0702 11.7467 24.0699 11.3856 23.789Z',
+      'M12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6ZM10 10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 13.1046 12 12 12C10.8954 12 10 11.1046 10 10Z',
+      'M11.3856 23.789L12 23C12.6139 23.7894 12.615 23.7885 12.615 23.7885L12.6169 23.7871L12.6231 23.7822L12.645 23.765C12.6638 23.7501 12.6909 23.7287 12.7258 23.7008C12.7954 23.6451 12.8961 23.5637 13.0233 23.4587C13.2776 23.2488 13.6385 22.944 14.0706 22.5599C14.9334 21.793 16.0867 20.7041 17.2433 19.419C18.397 18.1371 19.5731 16.639 20.4653 15.0528C21.3524 13.4758 22 11.7393 22 10C22 7.34784 20.9464 4.8043 19.0711 2.92893C17.1957 1.05357 14.6522 0 12 0C9.34784 0 6.8043 1.05357 4.92893 2.92893C3.05357 4.8043 2 7.34784 2 10C2 11.7393 2.64762 13.4758 3.53467 15.0528C4.42693 16.639 5.60303 18.1371 6.75671 19.419C7.91329 20.7041 9.06662 21.793 9.92939 22.5599C10.3615 22.944 10.7224 23.2488 10.9767 23.4587C11.1039 23.5637 11.2046 23.6451 11.2742 23.7008C11.3091 23.7287 11.3362 23.7501 11.355 23.765L11.3769 23.7822L11.3831 23.7871L11.3856 23.789ZM6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10C20 11.2607 19.5226 12.6492 18.7222 14.0722C17.9269 15.486 16.853 16.8629 15.7567 18.081C14.6633 19.2959 13.5666 20.332 12.7419 21.0651C12.4576 21.3178 12.2065 21.5337 12 21.7078C11.7935 21.5337 11.5424 21.3178 11.2581 21.0651C10.4334 20.332 9.33671 19.2959 8.24329 18.081C7.14697 16.8629 6.07307 15.486 5.27783 14.0722C4.47738 12.6492 4 11.2607 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315Z',
+    ],
+  },
 };
+
+const icon = icons[name];
+
+const render =
+  icon.drawn === 'stroke'
+    ? {
+        fill: 'none',
+        stroke: 'currentColor',
+        'stroke-width': '1.5',
+        'stroke-linecap': 'round',
+        'stroke-linejoin': 'round',
+      }
+    : { fill: 'currentColor', 'fill-rule': 'evenodd' };
 ---
 
 <svg
   width={size}
   height={size}
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="1.5"
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  viewBox={icon.viewBox}
+  {...render}
   role={title ? 'img' : undefined}
   aria-hidden={title ? undefined : 'true'}
 >
   {title && <title>{title}</title>}
-  {paths[name].map((d) => <path d={d}></path>)}
+  {icon.paths.map((d) => <path d={d}></path>)}
 </svg>
