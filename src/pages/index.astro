@@ -17,8 +17,8 @@ import classes from '../data/classes.json';
 ---
 
 <Base
-  title="Begin Again Yoga — small-group yoga for every body"
-  description="Small-group yoga for every body and every level. Vinyasa flow, pranayama and meditation with Ardita Biru Langit — schedule and pricing coming soon."
+  title="Begin Again Yoga — group and personal yoga training for every body"
+  description="Group and personal yoga training in London, for every body and every level. Vinyasa flow, pranayama and meditation with Ardita Biru Langit."
 >
   <section class="hero">
     <div class="wrap hero-inner">
@@ -32,12 +32,11 @@ import classes from '../data/classes.json';
       />
       <h1 class="script">{site.tagline}</h1>
       <p class="sub">
-        Small-group yoga in {site.location}, for
+        Group and personal yoga training in {site.location}, for
         every body and every level.
       </p>
       <div class="cta">
-        <Button href={href('/classes/')}>See classes</Button>
-        <a href={href('/contact/')}>Get in touch</a>
+        <Button href={href('/contact/')}>Get in touch</Button>
       </div>
     </div>
   </section>
@@ -74,7 +73,6 @@ import classes from '../data/classes.json';
       <div class="cards">
         {classes.map((c) => <ClassCard {...c} />)}
       </div>
-      <p><a href={href('/classes/')}>Full schedule &amp; pricing</a></p>
     </div>
   </section>
 
@@ -86,24 +84,13 @@ import classes from '../data/classes.json';
       <li>
         <Icon name="path" size={28} />
         <h3>Where</h3>
-        <p>
-          {site.location} —
-          <span class="todo">map link TODO</span>
-        </p>
-      </li>
-      <li>
-        <Icon name="sunrise" size={28} />
-        <h3>When</h3>
-        <p>
-          The weekly timetable is being finalised.
-          <a href={href('/classes/')}>See classes &amp; schedule</a>
-        </p>
+        <p>{site.location}</p>
       </li>
       <li>
         <Icon name="heart" size={28} />
         <h3>Say hello</h3>
         <p>
-          Message to reserve a spot, or just to ask.
+          Send me a message to arrange a session.
           <a href={href('/contact/')}>Get in touch</a>
         </p>
       </li>
@@ -187,7 +174,7 @@ import classes from '../data/classes.json';
 
   .cols {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
   }
 

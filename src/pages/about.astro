@@ -7,6 +7,8 @@ import Icon from '../components/Icon.astro';
 import HillDivider from '../components/HillDivider.astro';
 import { href } from '../lib/href';
 import site from '../data/site.json';
+import pose from '../assets/brand/yoga-pose.jpg';
+import certificate from '../assets/brand/yoga-certificate.jpg';
 
 const philosophy = [
   {
@@ -21,7 +23,7 @@ const philosophy = [
   },
   {
     icon: 'circle',
-    title: 'Pause. Breathe. Reset.',
+    title: 'Breathe',
     text: 'An hour that belongs to you. Put the week down at the door; it will keep.',
   },
 ] as const;
@@ -38,7 +40,7 @@ const philosophy = [
 
   <section class="wrap story">
     <div class="story-text">
-      <h2>Why &ldquo;begin again&rdquo;</h2>
+      <h2>Why &ldquo;Begin Again&rdquo;</h2>
       <!-- Ardita's own words — edit only with her. -->
       <div class="prose">
         <p>My journey to yoga was not a straight line.</p>
@@ -89,7 +91,12 @@ const philosophy = [
         <p class="byline">&mdash; {site.teacher}</p>
       </div>
     </div>
-    <PhotoPlaceholder label="Photo — TODO" />
+    <PhotoPlaceholder
+      src={pose}
+      alt="Ardita kneeling on her mat in a backbend, chest lifted toward the skylight, in a bright, plant-filled studio"
+      origin="45% 88%"
+      radius="46% 54% 48% 52% / 52% 44% 58% 38%"
+    />
   </section>
 
   <HillDivider />
@@ -117,12 +124,18 @@ const philosophy = [
         <span>{site.certification}</span>
       </p>
     </div>
-    <PhotoPlaceholder label="Photo — TODO" />
+    <PhotoPlaceholder
+      src={certificate}
+      alt="Ardita smiling in white, holding her 200hr vinyasa teacher-training certificate and a white rose"
+      zoom={1.2}
+      origin="50% 50%"
+      radius="55% 45% 47% 53% / 41% 52% 57% 44%"
+    />
   </section>
 
   <section class="wrap closing">
     <p class="script closing-line">Come as you are.</p>
-    <Button href={href('/classes/')}>See classes &amp; schedule</Button>
+    <Button href={href('/contact/')}>Get in touch</Button>
   </section>
 </Base>
 
@@ -229,7 +242,7 @@ const philosophy = [
   .closing {
     display: grid;
     justify-items: center;
-    gap: 1.25rem;
+    gap: 2.25rem;
     padding-block: var(--space-section) 0;
     text-align: center;
   }

@@ -3,9 +3,10 @@
 Marketing website for Ardita's yoga practice — soft, earthy, one breath at a time.
 Static site, hosted for free on GitHub Pages.
 
-**Status: Phases 1–5 built (placeholder content).** Awaiting owner: publish the
-repo + enable Pages (Phase 5), answer the Phase 0 questions, then Phase 6 swaps
-in real content.
+**Status: live at [beginagainyoga.co.uk](https://beginagainyoga.co.uk).** Real
+content is in — her story, classes, photos, contact details. Schedule and pricing
+are deliberately off the site until the owner confirms real details; the remaining
+open questions live at the bottom of [docs/CONTENT.md](docs/CONTENT.md).
 
 ## Documentation map
 
@@ -20,6 +21,9 @@ in real content.
 The brand board (logo + palette reference image) should live at `docs/brand-board.jpg` — see Phase 0 in the plan.
 
 ## Publishing this repo (one-time)
+
+✅ Done — repo is `ysdexlic/begin-again-yoga`, Pages deploys via GitHub Actions,
+and the site serves from the custom domain. Steps kept for reference:
 
 GitHub Pages on a free account requires a **public** repo. The repo name matters —
 it becomes the URL path (see [docs/TECH.md](docs/TECH.md) about `base`).

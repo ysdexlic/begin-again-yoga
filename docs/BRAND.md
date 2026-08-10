@@ -91,7 +91,7 @@ viewbox), `--sage-deep`, rounded caps, no fills:
 | Winding S-curve path | A New Path |
 | Sprout with two leaves | Growth |
 | Open line heart | Self Love |
-| Hand-drawn open circle (ensō) | Pause. Breathe. Reset. |
+| Hand-drawn open circle (ensō) | Pause. Breathe. Reset. (site caption shortened to "Breathe" 2026-08-10) |
 
 Use as section markers, footer strip (icon + tracked label, like the board), and
 list bullets. Supporting motifs: em-dashes flanking labels, the lotus glyph as a

@@ -16,7 +16,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 - [x] Add the brand board image (the logo/palette reference) as `docs/brand-board.jpg`
 - [x] Confirm GitHub repo name (plan assumes `begin-again-yoga` — see TECH.md if different) — confirmed: repo exists as `ysdexlic/begin-again-yoga`, matching `base`
-- [ ] Custom domain yes/no (affects `base` config — TECH.md §Deployment)
+- [x] Custom domain yes/no — yes: **beginagainyoga.co.uk**, live 2026-08-08 (TECH.md §Custom domain)
 - [ ] Answer the "Open questions" list at the bottom of docs/CONTENT.md
 
 ## Phase 1 — Scaffold & design system
@@ -40,10 +40,10 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 3 — Pages
 
-- [x] Data files per TECH.md: `site.json`, `classes.json`, `schedule.json`, `pricing.json` — placeholder content exactly as marked in CONTENT.md
+- [x] Data files per TECH.md: `site.json`, `classes.json`, `schedule.json`, `pricing.json` — placeholder content exactly as marked in CONTENT.md (schedule.json and pricing.json removed 2026-08-10 with their sections)
 - [x] Home — hero, icon value strip, intro, class-card preview, sage quote band, practical section (CONTENT §Home)
 - [x] About — story, philosophy, trainings placeholder, photo placeholders (CONTENT §About)
-- [x] Classes & Schedule — class cards, weekly schedule table, pricing cards, first-timer FAQ (CONTENT §Classes)
+- [x] Classes & Schedule — class cards, weekly schedule table, pricing cards, first-timer FAQ (CONTENT §Classes) — page removed 2026-08-10; the cards live on the homepage
 - [x] Contact — email CTA, Instagram, location; no form in v1 (CONTENT §Contact)
 - [x] 404 — on-brand (CONTENT §404)
 - **Acceptance:** every section listed in CONTENT.md exists; no dead links; internal links respect the base path; placeholders clearly marked, none invented.
@@ -69,13 +69,17 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
   2026-08-09: her story (About, verbatim), name as **Ardita Biru Langit**, real
   classes (Vinyasa Flow / Pranayama / Meditation) and the Yoga Alliance 200hr YTT
   cert (About + footer) are in. Also in (later 2026-08-09): location **London**,
-  email **hello@beginagainyoga.co.uk**, Instagram **@arditabiru**, and the owner's
+  email **hello@beginagainyoga.co.uk**, Instagram **@arditabiru** (changed to
+  **@begin_againyoga** on 2026-08-10), and the owner's
   real script font (Brittany Signature TTF, replacing Allura — BRAND §3 updated).
-  Still TODO: weekly schedule, pricing, class levels/durations, map link,
-  mats-provided confirm
-- [ ] Real photos via `astro:assets` (natural light, earth tones — BRAND §5) —
+  ~~Still TODO: weekly schedule, pricing, class levels/durations, map link,
+  mats-provided confirm~~ 2026-08-10: these placeholder sections were removed
+  from the site at the owner's request — re-add if real details arrive
+- [x] Real photos via `astro:assets` (natural light, earth tones — BRAND §5) —
   partial 2026-08-09: homepage portrait in (`src/assets/brand/dita.jpg`, studio
-  shot, rendered through the blob frame). About-page photos still TODO
+  shot, rendered through the blob frame). Completed 2026-08-10: About photos in —
+  studio backbend (story) and YTT-certificate shot (trainings), same blob frame
+  with per-photo crop tuning
 - [ ] Optional: contact form via Formspree; booking embed
 - [x] Custom domain (TECH.md §Custom domain): `beginagainyoga.co.uk` — Cloudflare DNS (grey-cloud A/CNAME records), Pages cname set via API, HTTPS enforced
 

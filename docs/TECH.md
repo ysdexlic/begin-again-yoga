@@ -38,11 +38,11 @@ not delete the existing docs. Alternatively hand-write `package.json` +
 ├─ src/
 │  ├─ styles/global.css     # reset + ALL design tokens + type scale (BRAND.md)
 │  ├─ layouts/Base.astro    # head/SEO props, fonts, skip-link, Header/Footer
-│  ├─ components/           # Header, Footer, Logo, Icon, Button, SectionLabel,
-│  │                        # ClassCard, ScheduleTable, PriceCard, QuoteBand, HillDivider
-│  ├─ data/                 # site.json · classes.json · schedule.json · pricing.json
-│  ├─ assets/               # logo SVGs, og-image source, photos later (astro:assets)
-│  └─ pages/                # index · about · classes · contact · 404 (.astro)
+│  ├─ components/           # Header, Footer, Icon, Button, SectionLabel, ClassCard,
+│  │                        # QuoteBand, HillDivider, ValueStrip, PhotoPlaceholder
+│  ├─ data/                 # site.json · classes.json
+│  ├─ assets/               # brand logo + photos (astro:assets)
+│  └─ pages/                # index · about · contact · 404 (.astro)
 └─ .github/workflows/deploy.yml
 ```
 
@@ -52,25 +52,23 @@ only from `src/data/`; components stay small and server-rendered; images go thro
 
 ## astro.config.mjs
 
+Current config — custom domain live since 2026-08-08, so no `base`:
+
 ```js
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://ysdexlic.github.io',
-  base: '/begin-again-yoga',
+  site: 'https://beginagainyoga.co.uk',
   integrations: [sitemap()],
 });
 ```
 
-⚠️ **`base` must equal the repo name.** The site serves from
-`https://ysdexlic.github.io/begin-again-yoga/`, so every internal link must be
-prefixed with `import.meta.env.BASE_URL` — make a tiny `href()` helper and use it
-everywhere. Imported assets are handled automatically. Unprefixed links are the
-classic GitHub Pages bug: everything works in dev, 404s in production.
-
-Exceptions (drop `base` entirely, set `site` accordingly): repo named
-`ysdexlic.github.io`, or a custom domain.
+⚠️ Only if the site ever moves back to project-pages serving
+(`ysdexlic.github.io/begin-again-yoga/`): set `base` to the repo name. Every
+internal link already goes through the tiny `href()` helper (which is why it
+exists — keep using it). Unprefixed links are the classic GitHub Pages bug:
+everything works in dev, 404s in production.
 
 ## GitHub Pages deployment
 
@@ -115,6 +113,9 @@ One-time, by the owner after first push: repo **Settings → Pages → Source:
 "GitHub Actions"**. Requires a public repo on the free plan.
 
 ## Custom domain (optional, Phase 6)
+
+✅ Done 2026-08-08: **beginagainyoga.co.uk** — Cloudflare DNS (grey-cloud records),
+`public/CNAME`, HTTPS enforced, `base` removed. Steps kept for reference:
 
 1. Buy domain; DNS `CNAME` record: `www` → `ysdexlic.github.io` (apex via ALIAS/ANAME
    or GitHub's A records).

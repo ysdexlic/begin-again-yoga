@@ -2,24 +2,18 @@
   {
     "name": "Vinyasa Flow",
     "confirmed": true,
-    "level": "TODO: level",
-    "duration": "TODO: length",
     "icon": "path",
     "description": "Movement linked to breath, one shape at a time. Space to arrive, soften and find your own pace."
   },
   {
     "name": "Pranayama",
     "confirmed": true,
-    "level": "TODO: level",
-    "duration": "TODO: length",
     "icon": "circle",
     "description": "The breath is our anchor. Space to slow down, settle the mind and reconnect with the present moment."
   },
   {
     "name": "Meditation",
     "confirmed": true,
-    "level": "TODO: level",
-    "duration": "TODO: length",
     "icon": "heart",
     "description": "A moment to simply be, to pause and turn our attention inwards."
   }
