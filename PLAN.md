@@ -16,7 +16,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 - [x] Add the brand board image (the logo/palette reference) as `docs/brand-board.jpg`
 - [x] Confirm GitHub repo name (plan assumes `begin-again-yoga` — see TECH.md if different) — confirmed: repo exists as `ysdexlic/begin-again-yoga`, matching `base`
-- [ ] Custom domain yes/no (affects `base` config — TECH.md §Deployment)
+- [x] Custom domain yes/no — yes: **beginagainyoga.co.uk**, live 2026-08-08 (TECH.md §Custom domain)
 - [ ] Answer the "Open questions" list at the bottom of docs/CONTENT.md
 
 ## Phase 1 — Scaffold & design system
@@ -40,7 +40,7 @@ Gathered by the owner, not the agent. Nothing here blocks Phases 1–5.
 
 ## Phase 3 — Pages
 
-- [x] Data files per TECH.md: `site.json`, `classes.json`, `schedule.json`, `pricing.json` — placeholder content exactly as marked in CONTENT.md
+- [x] Data files per TECH.md: `site.json`, `classes.json`, `schedule.json`, `pricing.json` — placeholder content exactly as marked in CONTENT.md (schedule.json and pricing.json removed 2026-08-10 with their sections)
 - [x] Home — hero, icon value strip, intro, class-card preview, sage quote band, practical section (CONTENT §Home)
 - [x] About — story, philosophy, trainings placeholder, photo placeholders (CONTENT §About)
 - [x] Classes & Schedule — class cards, weekly schedule table, pricing cards, first-timer FAQ (CONTENT §Classes) — page removed 2026-08-10; the cards live on the homepage

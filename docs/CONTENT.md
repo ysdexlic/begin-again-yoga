@@ -6,9 +6,10 @@ Placeholders must *look* like placeholders. Never invent real-sounding schedules
 prices, addresses, or certifications.
 
 **Where content lives:** repeated/structured content in `src/data/*.json`
-(`site.json` for email/Instagram/location strings, plus `classes.json`,
-`schedule.json`, `pricing.json`). One-off page copy may live in the page files.
-The owner should be able to edit a class time without touching markup.
+(`site.json` for email/Instagram/location strings, plus `classes.json`;
+`schedule.json` and `pricing.json` were removed 2026-08-10 with their sections).
+One-off page copy may live in the page files. The owner should be able to edit
+a class description without touching markup.
 
 ## Sitemap
 
@@ -23,7 +24,7 @@ and class levels/durations are off the site until the owner confirms real detail
 
 ## Home
 
-1. **Hero** — logo lockup; script headline "Every day is a chance to begin again.";
+1. **Hero** — logo lockup; script headline "Every day is a chance to Begin Again.";
    subline "Group and personal yoga training in [LOCATION], for every body and
    every level.";
    primary button "Get in touch" → /contact/ (was "See classes"; classes page
@@ -56,8 +57,8 @@ the same day; re-add a classes page if/when a real schedule and prices arrive.
 
 ## Contact
 
-- Email button (`mailto:` from `site.json` — `TODO: address`), Instagram link
-  (`TODO: handle`), location + map link (`TODO`).
+- Email button (`mailto:` from `site.json`), Instagram link (@begin_againyoga),
+  location (map link dropped 2026-08-10).
 - One warm sentence about response time and beginners being welcome to just ask
   questions. No form in v1 (static host); Formspree is the Phase 6 option.
 
@@ -72,8 +73,9 @@ line "Take a breath and begin again at home." → button to /.
 
 - [x] How her name should appear on the site (Ardita? full name?) + short bio + 2–3 photos
   — answered 2026-08-09: full name, **Ardita Biru Langit**; her story is on /about/
-  verbatim. Photos still to come.
-- [ ] Location: studio address / online / in-home visits?
+  verbatim. Photos in 2026-08-10 (homepage portrait, About backbend + certificate).
+- [ ] Location: studio address / online / in-home visits? — London confirmed
+  2026-08-09; the rest still open
 - [ ] Class types with names, levels, durations, descriptions — partial 2026-08-09:
   names + descriptions in `classes.json` (Vinyasa Flow, Pranayama, Meditation);
   levels and durations dropped from the site 2026-08-10, re-add when confirmed
@@ -81,9 +83,10 @@ line "Take a breath and begin again at home." → button to /.
   times exist
 - [ ] Prices: drop-in, pass, private — and how people pay (pricing section removed
   from the site 2026-08-10; re-add once real prices exist)
-- [ ] Contact email for the site + Instagram handle
+- [x] Contact email for the site + Instagram handle — hello@beginagainyoga.co.uk;
+  Instagram @arditabiru (2026-08-09), changed to @begin_againyoga 2026-08-10
 - [x] Certifications / insurance line for the footer? — answered 2026-08-09:
   "Yoga Alliance Certified 200hr YTT Vinyasa flow UK & US" (in footer + About;
   insurance line still unanswered)
 - [ ] Booking preference: keep "message me" or embed a tool (Calendly/Momence) later?
-- [ ] Custom domain (e.g. beginagainyoga.com)? Buy it early if yes — see TECH.md
+- [x] Custom domain — yes: **beginagainyoga.co.uk**, live since 2026-08-08 (TECH.md)
